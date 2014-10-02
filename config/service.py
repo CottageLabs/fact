@@ -1,5 +1,41 @@
 # overrides for the webapp deployment
-DEBUG = True
-PORT = 5000
+DEBUG = False
+PORT = 5015
 SSL = False
 THREADED = True
+
+ELASTIC_SEARCH_HOST = "http://localhost:9200"
+ELASTIC_SEARCH_INDEX = "fact"
+
+from esprit import mappings
+ELASTIC_SEARCH_MAPPINGS = {
+    "journal" : mappings.for_type(
+        "journal",
+            mappings.dynamic_templates(
+            [
+                mappings.EXACT,
+            ]
+        )
+    )
+}
+
+AUTOCOMPLETE_COMPOUND = {
+    "journal" : {                                  # name of the autocomplete, as represented in the URL (have as many of these sections as you need)
+        "fields" : ["issn", "journal"],         # fields to return in the compound result
+        "filters" : {                           # filters to apply to the result set
+            "issn.exact" : {                    # field on which to filter
+                "start_wildcard" : True,        # apply start wildcard?
+                "end_wildcard": True,           # apply end wildcard?
+                "boost" : 2.0                   # boost to apply to matches on this field
+            },
+            "journal.exact" : {
+                "start_wildcard" : True,
+                "end_wildcard": True,
+                "boost" : 1.0
+            }
+        },
+        "default_size" : 10,                    # if no size param is specified, this is how big to make the response
+        "max_size" : 25,                        # if a size param is specified, this is the limit above which it won't go
+        "dao" : "service.dao.JournalAutocompleteDAO"           # classpath for DAO which accesses the underlying ES index
+    }
+}
