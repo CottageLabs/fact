@@ -20,6 +20,13 @@ def static(filename):
 from portality.modules.es.autocomplete import blueprint as autocomplete
 app.register_blueprint(autocomplete, url_prefix='/autocomplete')
 
+from portality.modules.sherpafact.proxy import blueprint as fact
+app.register_blueprint(fact, url_prefix="/fact")
+
+@app.route("/")
+def home():
+    return render_template("index.html")
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('errors/404.html'), 404
