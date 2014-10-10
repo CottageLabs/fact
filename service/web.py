@@ -30,13 +30,12 @@ app.register_blueprint(autocomplete, url_prefix='/autocomplete')
 from portality.modules.sherpafact.proxy import blueprint as fact
 app.register_blueprint(fact, url_prefix="/fact")
 
+from portality.modules.examples.examples import blueprint as examples
+app.register_blueprint(examples, url_prefix="/examples")
+
 @app.route("/")
 def home():
     return render_template("index.html")
-
-@app.route("/ac")
-def autocomplete():
-    return render_template("es/autocomplete.html")
 
 @app.errorhandler(404)
 def page_not_found(e):
