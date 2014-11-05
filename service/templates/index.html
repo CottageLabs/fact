@@ -2,11 +2,56 @@
 
 {% block content %}
 
-Sherpa Fact
+<div class="row gradient">
+    <div class="col-sm-12">
+        {% include "_search_panel.html" %}
+    </div>
+</div>
 
 {% endblock %}
 
 
 {% block extra_js_bottom %}
-<script type="text/javascript" src="{{ url_for('static', filename='js/service.facetview.theme.js') }}"></script>
+<!-- get the octopus js (must be done first) -->
+<script type="text/javascript" src="{{url_for('static', filename='js/octopus.js')}}"></script>
+
+<!-- get the application config -->
+<script type="text/javascript" src="{{url_for('configjs.javascript_config')}}"></script>
+
+<!-- get all of the module javascript libraries (implementers will want to enable/disable the relevant parts here, as you won't want to load all of them) -->
+<script type="text/javascript" src="{{url_for('static', filename='js/es/autocomplete.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/sherpafact/fact.js')}}"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+    $("#funders-select").select2({
+        placeholder: 'Click to select Funders'
+    });
+
+    $("#clear-select").click(function() { $("#funders-select").select2("val", ""); });
+
+    function titleIssnFormat(result) {
+        var identifier = "";
+        var display = result.journal;
+
+        if (result.issn && result.issn.length > 0) {
+            identifier = result.issn[0];
+            display += " (ISSN: " + result.issn.join(", ") + ")";
+        } else {
+            identifier = result.journal;
+        }
+
+        return {id : identifier, text: display};
+    }
+
+    octopus.esac.bindCompoundAutocomplete({
+        selector : "#title_issn",
+        minimumInputLength : 3,
+        placeholder :"Title or ISSN",
+        type : "journal",
+        format : titleIssnFormat,
+        allow_clear : true
+    });
+});
+</script>
 {% endblock%}

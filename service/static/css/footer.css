@@ -1,0 +1,41 @@
+.footer-dark {
+    margin-top: 130px;
+    background-color: #414141;
+    color: #fff;
+}
+.sponsors{
+    padding-left: 15px;
+}
+.footer-dark h3{
+    font-size: 14px;
+}
+.sponsor-logo {
+    width: auto;
+    height: 25px;
+    margin: 10px;
+}
+.sponsor-logo.smaller {
+    width: auto;
+    height: 20px;
+    margin: 10px;
+}
+.disclaimer {
+    margin: 25px 15px 15px 15px;
+}
+.footer-disclaimer{
+    color: #fff;
+    font-size: 10px;
+    line-height: 1;
+}
+.contact a {
+    color: #fff;
+}
+.contact a:hover {
+    color: lightgray;
+    text-decoration: none;
+}
+@media (max-width: 768px){
+    .contact {
+        padding-left: 15px;
+    }
+}

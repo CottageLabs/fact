@@ -1,0 +1,52 @@
+.form-control.sherpa-form {
+	border-radius: 1px;
+	border: 1px solid #6e8270;
+	font-family: Proxima;
+}
+::-webkit-input-placeholder {
+	font-family: ProximaItalic;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+	font-family: ProximaItalic;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+	font-family: ProximaItalic;
+}
+
+:-ms-input-placeholder {  
+	font-family: ProximaItalic;
+}
+
+.select2-results-dept-0.select2-result.select2-result-selectable.select2-highlighted {
+	background-color: #87aa3a;
+
+}
+.select2-search-choice {
+	font-family: ProximaLight;
+	color: #414141;
+}
+
+/* different font for placeholder text in select2 */
+.select2-container-multi .select2-choices .select2-search-field input {
+    font-family: ProximaItalic;
+}
+.select2-container-multi.select2-container-active .select2-choices .select2-search-field input {
+    font-family: Proxima;
+}
+.select2-container-multi .select2-choices .select2-search-choice{
+	background-color: #fff;
+	border-color: #6e8270;
+}
+.search-message {
+	font-size: 18px;
+	color: #414141;
+}
+a.feedback-link{
+	font-family: ProximaLight;
+	color: #414141;
+	text-decoration: underline;
+	font-size: 16px;
+
+}

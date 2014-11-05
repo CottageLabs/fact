@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Sherpa Fact - Funders & Authors Compliance Tool</title>
+
+    <!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+    <link href="{{url_for('static', filename='css/bootstrap.min.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/select2.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/select2-bootstrap.css')}}" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="{{url_for('static', filename='css/sherpa.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/nav.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/footer.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/search.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/search-results.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/results.css')}}" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="{{url_for('static', filename='css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+</head>
+
+<body id="page-top" class="index">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-default">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="logo" href="/home">Sherpa Fact</a>
+                <p class="logo-tag">Opening access to research</p>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a class="nav-item" href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a a class="nav-item" href="help.html">Help & Feedback</a>
+                    </li>
+                    <li>
+                        <a a class="nav-item dropdown-toggle" data-toggle="dropdown" href="#">More +</a>
+                        <ul aria-labelledby="dropdownMenu1" class="dropdown-menu dropdown-style uppercase" role="menu">
+                            <li>
+                            <a href="api.html" class: 'dropdown-link', role: 'menuitem', tabindex: '-1')> Api</a>
+                            </li> 
+                            <li>
+                            <a href="about.html" class: 'dropdown-link', role: 'menuitem', tabindex: '-1')> About </a>
+                            </li> 
+                          </ul>
+                        </a>
+
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container-fluid -->
+    </nav>
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="tagline">  Funders & Authors Compliance Tool - Helping you comply with funders’ open access policies</div>
+        </div>    
+    </div>
+
+    {% block content %}{% endblock %}
+
+                <!-- Footer -->
+    <footer class="footer-dark">
+        <div class="row">
+            <div class="col-sm-10">
+                <div class="sponsors">
+                    <h3> Sponsors</h3>
+                    <a href="http://www.jisc.ac.uk/"><img class="sponsor-logo" src="{{url_for('static', filename='img/JISC.png')}}"></a>
+                    <a href="http://www.rcuk.ac.uk/"><img class="sponsor-logo" src="{{url_for('static', filename='img/RCUK.png')}}"></a>
+                    <a href="http://www.wellcome.ac.uk/"><img class="sponsor-logo smaller" src="{{url_for('static', filename='img/wellcome.png')}}"></a>
+                </div>
+             </div>
+            <div class="col-sm-2">
+                <div class="contact">
+                    <a href="contact.html"><h3> Contact Us</h3></a>
+                    <a href="http://crc.nottingham.ac.uk/"><img class="sponsor-logo" src="{{url_for('static', filename='img/Centre.png')}}"></a>
+                </div>
+            </div>
+            <div class="col-sm-12 disclaimer">
+                <p class="footer-disclaimer">© 2013-2014, University of Nottingham. </p>
+                <p class="footer-disclaimer">FACT information is accurate to the best of our knowledge, but should not be relied upon for legal advice.</p>
+            </div>    
+        </div>   
+    </footer>
+
+
+    <!-- jQuery Version 1.11.0 -->
+    <script src="{{url_for('static', filename='js/jquery-1.11.0.js')}}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+
+    <!-- Bootstrap Select2 JavaScript -->
+    <script src="{{url_for('static', filename='js/select2.min.js')}}"></script>
+
+    {% block extra_js_bottom %}{% endblock extra_js_bottom %}
+
+</body>
+
+</html>
