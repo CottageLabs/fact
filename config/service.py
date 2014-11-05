@@ -12,6 +12,10 @@ ROMEO_API_KEY = ""
 ELASTIC_SEARCH_HOST = "http://localhost:9200"
 ELASTIC_SEARCH_INDEX = "fact"
 
+ELASTIC_SEARCH_MAPPINGS = [
+    "service.dao.JournalAutocompleteDAO"
+]
+
 AUTOCOMPLETE_COMPOUND = {
     "journal" : {                                  # name of the autocomplete, as represented in the URL (have as many of these sections as you need)
         "fields" : ["issn", "journal"],         # fields to return in the compound result
