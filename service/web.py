@@ -4,7 +4,6 @@ from flask.views import View
 
 from octopus.core import app
 from octopus.lib.webapp import custom_static
-from octopus.runner import start_from_main
 
 import sys
 
