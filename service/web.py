@@ -2,7 +2,7 @@ from flask import Flask, request, abort, render_template, redirect, make_respons
     send_from_directory
 from flask.views import View
 
-from octopus.core import app
+from octopus.core import app, initialise
 from octopus.lib.webapp import custom_static
 
 import sys
@@ -43,6 +43,7 @@ if __name__ == "__main__":
         pydevd.settrace(app.config.get('DEBUG_SERVER_HOST', 'localhost'), port=app.config.get('DEBUG_SERVER_PORT', 51234), stdoutToServer=True, stderrToServer=True)
         print "STARTED IN REMOTE DEBUG MODE"
 
+    initialise()
     app.run(host='0.0.0.0', debug=app.config['DEBUG'], port=app.config['PORT'], threaded=False)
     # app.run(host=app.config.get("HOST", "0.0.0.0"), debug=app.config.get("DEBUG", False), port=app.config.get("PORT", 5000), threaded=True)
     # start_from_main(app)
