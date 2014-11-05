@@ -1,6 +1,6 @@
 import esprit
-from portality.core import app
+from octopus.core import app
+from octopus.modules.es import dao
 
-class JournalAutocompleteDAO(esprit.dao.DomainObject):
+class JournalAutocompleteDAO(dao.ESDAO):
     __type__ = 'journal'
-    __conn__ = esprit.raw.Connection(app.config.get('ELASTIC_SEARCH_HOST'), app.config.get('ELASTIC_SEARCH_INDEX'))

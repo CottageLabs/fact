@@ -2,9 +2,9 @@ from flask import Flask, request, abort, render_template, redirect, make_respons
     send_from_directory
 from flask.views import View
 
-from portality.core import app
-from portality.lib.webapp import custom_static, javascript_config
-from portality.runner import start_from_main
+from octopus.core import app
+from octopus.lib.webapp import custom_static
+from octopus.runner import start_from_main
 
 import sys
 
@@ -19,28 +19,18 @@ def static(filename):
     return custom_static(filename)
 
 # this allows us to serve our standard javascript config
-@app.route("/javascript/config.js")
-def configure_javascript():
-    return javascript_config()
+from octopus.modules.clientjs.configjs import blueprint as configjs
+app.register_blueprint(configjs)
 
-
-from portality.modules.es.autocomplete import blueprint as autocomplete
+from octopus.modules.es.autocomplete import blueprint as autocomplete
 app.register_blueprint(autocomplete, url_prefix='/autocomplete')
 
-from portality.modules.sherpafact.proxy import blueprint as fact
+from octopus.modules.sherpafact.proxy import blueprint as fact
 app.register_blueprint(fact, url_prefix="/fact")
-
-from portality.modules.examples.examples import blueprint as examples
-app.register_blueprint(examples, url_prefix="/examples")
-
-@app.route("/")
-def home():
-    return render_template("index.html")
 
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('errors/404.html'), 404
-
 
 if __name__ == "__main__":
     pycharm_debug = app.config.get('DEBUG_PYCHARM', False)
