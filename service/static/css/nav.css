@@ -49,8 +49,8 @@
 .dropdown-menu>li>a {
     color: #6e8270;
     text-align: center;
-    padding-top: 7px;
-    padding-bottom: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
 }
 .dropdown-menu>li>a:hover{
     background-color: #6e8270;
@@ -86,4 +86,9 @@
     .tagline {
     padding-left: 30px;
     }
+}
+.navbar-nav>li>.dropdown-menu {
+    -webkit-box-shadow: 3px 2px 0px(0,0,0,.175)!important; 
+    box-shadow: 3px 2px 0px rgba(0,0,0,.175)!important;
+    border: none!important;
 }

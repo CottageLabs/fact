@@ -14,6 +14,9 @@
     height: 25px;
     margin: 10px;
 }
+.sponsor-logo.bigger {
+    height: 30px;
+}
 .sponsor-logo.smaller {
     width: auto;
     height: 20px;
