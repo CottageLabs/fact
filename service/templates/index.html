@@ -28,7 +28,12 @@ $(document).ready(function() {
         placeholder: 'Click to select Funders'
     });
 
-    $("#clear-select").click(function() { $("#funders-select").select2("val", ""); });
+    $("#clear-select").click(function(event) {
+        event.preventDefault();
+        $("#funders-select").select2("val", "");
+        // $("#funders-select").select2("placeholder", "Click to select Funders");
+        $("#title_issn").select2("val", "");
+    });
 
     function titleIssnFormat(result) {
         var identifier = "";
@@ -50,7 +55,8 @@ $(document).ready(function() {
         placeholder :"Title or ISSN",
         type : "journal",
         format : titleIssnFormat,
-        allow_clear : true
+        allow_clear : true,
+        allow_any: true
     });
 });
 </script>
