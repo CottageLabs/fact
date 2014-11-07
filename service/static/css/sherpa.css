@@ -1,4 +1,5 @@
-@font-face { 
+/*
+@font-face {
   font-family: Proxima; src: url('../fonts/Proxima_Nova.otf');
 }
 @font-face { 
@@ -7,6 +8,7 @@
 @font-face { 
   font-family: ProximaItalic; src: url('../fonts/Proxima_Nova_Italic.otf');
 }
+*/
 h2.form-heading {
     color: #6e8270;
     font-size: 20px;
@@ -15,7 +17,10 @@ h5{
     font-size: 22px;
 }
 p {
-    font-family: ProximaLight;
+    /*font-family: ProximaLight;*/
+    font-family: proxima-nova-alt, sans-serif;
+    font-weight: 100;
+    font-style: normal;
 }
 .row.gradient {
     background: #f8f8f2; /* Old browsers */
@@ -52,14 +57,23 @@ ol{
 }
 h3{
     font-size: 21px;
-    font-family: ProximaLight;
+    /*font-family: ProximaLight;*/
+    font-family: proxima-nova-alt, sans-serif;
+    font-weight: 100;
+    font-style: normal;
 }
 h4 {
-    font-family: ProximaLight;
+    /*font-family: ProximaLight;*/
+    font-family: proxima-nova-alt, sans-serif;
+    font-weight: 100;
+    font-style: normal;
     font-size: 16px;
 }
 .bold {
-    font-family:Proxima; 
+    /*font-family:Proxima;*/
+    font-family: proxima-nova-alt, sans-serif;
+    font-weight: 600;
+    font-style: normal;
 }
 
 /* buttons */
