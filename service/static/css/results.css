@@ -40,11 +40,11 @@ a.toggle-text {
 }
 .toggle-text:before{
 	font-family: FontAwesome;
-	content: "\f0fe";
+	content: "\f146";/*minus "\f146";*/
 }
 .toggle-text.collapsed:before{
 	font-family: FontAwesome;
-	content: "\f146";/*minus "\f146";*/
+    content: "\f0fe";
 }
 .additional-info {
 	margin-top: 25px;
