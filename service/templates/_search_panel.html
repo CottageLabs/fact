@@ -12,26 +12,36 @@
                     <h2 class="form-heading"> Please select the funder(s)</h2>
                     <div class="form-group">
                         <select id="funders-select" class="form-control sherpa-form" multiple="true" placeholder="Please select the funder(s)">
-                            <option value="Arthritis">Arthritis Research UK</option>
-                            <option value="AHRC">Art & Humanities Research Council (AHRC)</option>
-                            <option value="BBSRC">Biotechnology and Biological Sciences Research Council (BBSRC)</option>
-                            <option value="BC">Breast Cancer Research</option>
-                            <option value="BHF">British Heart Foundation (BHF)</option>
-                            <option value="CRUK">Cancer Research UK</option>
-                            <option value="ESRC">Economic and Social Research Council (ESRC)</option>
-                            <option value="EPSRC">Engineering and Physical Sciences Research Council(EPSRC)</option>
-                            <option value="LLR">Leukaemia and Lymphoma Research</option>
-                            <option value="MRC">Medical Research Council(MRC)</option>
-                            <option value="NERC">Natural Environment Research Council (NERC)</option>
-                            <option value="STFC">Science & Technology Facilities Council (STFC)</option>
-                            <option value="WT">Wellcome Trust</option>
+                            <option value="14">Arthritis Research UK</option>
+                            <option value="698">Arts and Humanities Research Council (AHRC)</option>
+                            <option value="709">Biotechnology and Biological Sciences Research Council (BBSRC)</option>
+                            <option value="873">Breast Cancer Campaign</option>
+                            <option value="18">British Heart Foundation</option>
+                            <option value="19">Cancer Research UK</option>
+                            <option value="717">Economic and Social Research Council (ESRC)</option>
+                            <option value="722">Engineering and Physical Sciences Research Council (EPSRC)</option>
+                            <option value="925">Leukaemia &amp; Lymphoma Research</option>
+                            <option value="705">Medical Research Council (MRC)</option>
+                            <option value="726">Natural Environment Research Council (NERC)</option>
+                            <option value="716">Science and Technology Facilities Council (STFC)</option>
+                            <option value="695">Wellcome Trust</option>
                         </select>
                     </div>
                 </div>
             </li>
         </ol>
         <div class="clearfix">
-            <a class="btn search-button pull-right">Search</a>
+            <div id="not-found" style="display:none">
+                <p class="search-message"> No results found</p>
+                <a href="#" class="feedback-link"> Send us feedback</a>
+            </div>
+            <div id="form-errors" style="display:none">
+                <p class="search-message"> We need more information to do your search - fill in both the boxes above</p>
+            </div>
+            <div id="searching" style="display:none">
+                <p class="search-message"> Analysing compliance ...</p>
+            </div>
+            <a class="btn search-button pull-right" id="do-search">Search</a>
             <button id="clear-select" type="reset" value="Clear" class=" btn clear-button pull-right">Clear</button>
         </div>
     </form>

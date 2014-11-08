@@ -5,6 +5,7 @@
 <div class="row gradient">
     <div class="col-sm-12">
         {% include "_search_panel.html" %}
+        <div id="provisional-results"></div>
     </div>
 </div>
 
@@ -31,8 +32,9 @@ $(document).ready(function() {
     $("#clear-select").click(function(event) {
         event.preventDefault();
         $("#funders-select").select2("val", "");
-        // $("#funders-select").select2("placeholder", "Click to select Funders");
         $("#title_issn").select2("val", "");
+        $("#not-found").hide();
+        $("#form-errors").hide();
     });
 
     function titleIssnFormat(result) {
@@ -57,6 +59,36 @@ $(document).ready(function() {
         format : titleIssnFormat,
         allow_clear : true,
         allow_any: true
+    });
+
+    $("#do-search").click(function(event) {
+        event.preventDefault();
+
+        function factResults(data) {
+            var fact = octopus.sherpafact.newFact({raw : data});
+            $("#searching").hide();
+            if (fact.result_count() === 0) {
+                $("#not-found").show()
+            }
+            $("#provisional-results").html("<pre>" + fact.result_count() + "</pre>")
+        }
+
+        $("#form-errors").hide();
+        $("#searching").show();
+
+        var joi = $("#title_issn").val();
+        var fs = $("#funders-select").val();
+
+        if (joi === "" || !fs || fs.length === 0) {
+            $("#form-errors").show();
+            return;
+        }
+
+        octopus.sherpafact.proxy({
+            journal_or_issn: joi,
+            funders: fs,
+            success: factResults
+        });
     });
 });
 </script>
