@@ -118,15 +118,7 @@
     </footer>
 
 
-    <!-- jQuery Version 1.11.0 -->
-    <script src="{{url_for('static', filename='js/jquery-1.11.0.js')}}"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
-
-    <!-- Bootstrap Select2 JavaScript -->
-    <script src="{{url_for('static', filename='js/select2.min.js')}}"></script>
-
+    {% include "_js_includes.html" %}
     {% block extra_js_bottom %}{% endblock extra_js_bottom %}
 
 </body>

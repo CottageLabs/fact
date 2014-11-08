@@ -1,0 +1,18 @@
+<!-- jQuery Version 1.11.0 -->
+<script src="{{url_for('static', filename='js/jquery-1.11.0.js')}}"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="{{url_for('static', filename='js/bootstrap.min.js')}}"></script>
+
+<!-- Bootstrap Select2 JavaScript -->
+<script src="{{url_for('static', filename='js/select2.min.js')}}"></script>
+
+<!-- get the octopus js (must be done first) -->
+<script type="text/javascript" src="{{url_for('static', filename='js/octopus.js')}}"></script>
+
+<!-- get the application config -->
+<script type="text/javascript" src="{{url_for('configjs.javascript_config')}}"></script>
+
+<!-- get all of the module javascript libraries (implementers will want to enable/disable the relevant parts here, as you won't want to load all of them) -->
+<script type="text/javascript" src="{{url_for('static', filename='js/es/autocomplete.js')}}"></script>
+<script type="text/javascript" src="{{url_for('static', filename='js/sherpafact/fact.js')}}"></script>

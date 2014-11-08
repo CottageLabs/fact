@@ -5,7 +5,7 @@
 <div class="row gradient">
     <div class="col-sm-12">
         {% include "_search_panel.html" %}
-        <div id="provisional-results"></div>
+        {% include "_result.html" %}
     </div>
 </div>
 
@@ -13,15 +13,6 @@
 
 
 {% block extra_js_bottom %}
-<!-- get the octopus js (must be done first) -->
-<script type="text/javascript" src="{{url_for('static', filename='js/octopus.js')}}"></script>
-
-<!-- get the application config -->
-<script type="text/javascript" src="{{url_for('configjs.javascript_config')}}"></script>
-
-<!-- get all of the module javascript libraries (implementers will want to enable/disable the relevant parts here, as you won't want to load all of them) -->
-<script type="text/javascript" src="{{url_for('static', filename='js/es/autocomplete.js')}}"></script>
-<script type="text/javascript" src="{{url_for('static', filename='js/sherpafact/fact.js')}}"></script>
 
 <script type="text/javascript">
 $(document).ready(function() {
@@ -61,18 +52,143 @@ $(document).ready(function() {
         allow_any: true
     });
 
+    function populateResults(params) {
+        var fact = params.fact;
+        $("#results-journal-name").html(fact.journal_name());
+        $("#results-funder-name").html(fact.funder_names().join(", "));
+        $("#results-issn").html(fact.issn());
+        $("#results-publisher-name").html(fact.publisher());
+
+        $("#results-compliance").removeClass("zebra-red").removeClass("zebra-green");
+        var oc = fact.overall_compliance();
+        if (oc === "yes") {
+            $("#results-compliance").addClass("zebra-green");
+            $("#results-compliance-level").html("COMPLIANT").addClass("compliant");
+        } else {
+            $("#results-compliance").addClass("zebra-red");
+            if (oc === "no") {
+                $("#results-compliance-level").html("NOT COMPLIANT").removeClass("compliant");
+            } else if (oc === "maybe") {
+                $("#results-compliance-level").html("MAYBE COMPLIANT").removeClass("compliant");
+            } else if (oc === "unknown") {
+                $("#results-compliance-level").html("COMPLIANCE UNKNOWN").removeClass("compliant");
+            }
+        }
+
+        $("#results-overall-compliance-msg").html(fact.overall_compliance_msg())
+
+        $("#results-gold-compliance-icon").removeClass("fa-ban").removeClass("fa-check-circle");
+        $("#results-gold-compliance-container").removeClass("can-publish");
+        var gc = fact.gold_compliance();
+        var linkclass = "non-compliant-link";
+        if (gc === "yes") {
+            $("#results-gold-compliance-icon").addClass("fa-check-circle");
+            $("#results-gold-compliance-container").addClass("can-publish");
+            linkclass = "compliant-link";
+        } else {
+            $("#results-gold-compliance-icon").addClass("fa-ban");
+        }
+
+        var gcm = fact.gold_compliance_msg();
+        $("#results-gold-compliance").html(gcm);
+
+        var gcr = fact.gold_compliance_reason({link: true, linkclass: linkclass});
+        var gcf = fact.gold_fee();
+        if (gcf && gcf !== "") {
+            gcr += "<br>" + gcf;
+        }
+        $("#results-gold-compliance-reason").html(gcr);
+
+        $("#results-green-compliance-icon").removeClass("fa-ban").removeClass("fa-check-circle");
+        $("#results-green-compliance-container").removeClass("can-publish");
+        var grc = fact.green_compliance();
+        linkclass = "non-compliant-link";
+        if (grc === "yes") {
+            $("#results-green-compliance-icon").addClass("fa-check-circle");
+            $("#results-green-compliance-container").addClass("can-publish");
+            linkclass = "compliant-link";
+        } else {
+            $("#results-green-compliance-icon").addClass("fa-ban");
+        }
+
+        var grcm = fact.green_compliance_msg();
+        $("#results-green-compliance").html(grcm);
+
+        var grcr = fact.green_compliance_reason({link: true, linkclass: linkclass});
+        $("#results-green-compliance-reason").html(grcr);
+
+        $("#results-overall-recommendation").html(fact.overall_recommendation());
+
+        $("#results-goldadvice-container").hide();
+        $("#results-goldadvice-list").empty();
+
+        var goldadvice = fact.gold_advice();
+        var goldconfirm = fact.gold_confirm({link: true});
+        var goldprocess = fact.gold_process();
+        var golddetails = "";
+        for (var i = 0; i < goldadvice.length; i++) {
+            golddetails += "<p>" + goldadvice[i] + "</p>";
+        }
+        for (var i = 0; i < goldconfirm.length; i++) {
+            golddetails += "<p>" + goldconfirm[i] + "</p>";
+        }
+        for (var i = 0; i < goldprocess.length; i++) {
+            golddetails += "<p>" + goldprocess[i] + "</p>";
+        }
+        if (golddetails !== "") {
+            $("#results-goldadvice-list").html(golddetails);
+            $("#results-goldadvice-container").show();
+        }
+
+        $("#results-greenadvice-container").hide();
+        $("#results-greenadvice-list").empty();
+
+        var greenadvice = fact.green_advice();
+        var greenconfirm = fact.green_confirm();
+        var greendetails = "";
+        for (var i = 0; i < greenadvice.length; i++) {
+            greendetails += "<p>" + greenadvice[i] + "</p>";
+        }
+        for (var i = 0; i < greenconfirm.length; i++) {
+            greendetails += "<p>" + greenconfirm[i] + "</p>";
+        }
+        if (greendetails !== "") {
+            $("#results-greenadvice-list").html(greendetails);
+            $("#results-greenadvice-container").show();
+        }
+
+        $("#results-overalladvice-container").hide();
+        $("#results-overalladvice-list").empty();
+
+        var overalladvice = fact.overall_advice();
+        var overalldetails = "";
+        for (var i = 0; i < overalladvice.length; i++) {
+            overalldetails += "<p>" + overalladvice[i] + "</p>";
+        }
+        if (overalldetails !== "") {
+            $("#results-overalladvice-list").html(overalldetails);
+            $("#results-overalladvice-container").show();
+        }
+
+    }
+
     $("#do-search").click(function(event) {
         event.preventDefault();
 
         function factResults(data) {
             var fact = octopus.sherpafact.newFact({raw : data});
-            $("#searching").hide();
             if (fact.result_count() === 0) {
-                $("#not-found").show()
+                $("#searching").hide();
+                $("#not-found").show();
+            } else if (fact.result_count() === 1) {
+                populateResults({fact: fact});
+                $("#searching").hide();
+                $("#results-display").show();
             }
-            $("#provisional-results").html("<pre>" + fact.result_count() + "</pre>")
         }
 
+        $("#results-display").hide();
+        $("#not-found").hide();
         $("#form-errors").hide();
         $("#searching").show();
 

@@ -27,6 +27,9 @@ app.register_blueprint(autocomplete, url_prefix='/autocomplete')
 from octopus.modules.sherpafact.proxy import blueprint as fact
 app.register_blueprint(fact, url_prefix="/fact")
 
+from octopus.modules.examples.examples import blueprint as examples
+app.register_blueprint(examples, url_prefix="/examples")
+
 @app.errorhandler(404)
 def page_not_found(e):
     return render_template('errors/404.html'), 404

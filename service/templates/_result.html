@@ -1,0 +1,170 @@
+<div id="results-display" class="search-box results" style="display:none">
+    <div class="results">
+        <h3>  Journal: <span class="bold" id="results-journal-name">[Journal Name]</span></h3>
+        <h3 class="funder-style">Funder: <span class="bold" id="results-funder-name">[Funder(s)]</span></h3>
+        <h4 class="issn-style">ISSN: <span id="results-issn">[ISSN]</span></h4>
+        <h4>Publisher: <span id="results-publisher-name">[Publisher]</span></h4>
+    </div>
+
+    <div class="results" id="results-compliance"> <!-- insert zebra-green or zebra-red -->
+        <h5 class="uppercase" id="results-compliance-level">[compliance]</h5> <!-- insert compliant class if compliant -->
+        <p id="results-overall-compliance-msg">[overall.val_overallcompliance]</p>
+
+        <p class="bold result-info" id="results-gold-compliance-container"><span class="fa" id="results-gold-compliance-icon"></span> <span id="results-gold-compliance">[gold compliance]</span></p> <!-- fa-ban if not compliant, fa-check-circle if compliant | can-publish if compliant -->
+        <p id="results-gold-compliance-reason">[gold compliance reason]</p>
+
+        <p class="bold result-info" id="results-green-compliance-container"><span class="fa" id="results-green-compliance-icon"></span> <span id="results-green-compliance">[green compliance]</span></p> <!-- insert compliant class if compliant -->
+        <p id="results-green-compliance-reason">[green compliance reason]</p>
+    </div>
+
+    <div class="results">
+        <h5 class="uppercase" id="results-overall-recommendation">[overall recommendation]</h5>
+
+        <div id="results-goldadvice-container" style="display:none">
+            <p class="bold result-info">Publishing with open access:</p>
+            <div id="results-goldadvice-list"></div>
+        </div>
+
+        <div id="results-greenadvice-container" style="display:none">
+            <p class="bold result-info">Self-archiving:</p>
+            <div id="results-greenadvice-list"></div>
+        </div>
+
+        <div id="results-overalladvice-container" style="display:none">
+            <p class="bold result-info">Overall advice:</p>
+            <div id="results-overalladvice-list"></div>
+        </div>
+    </div>
+
+    <div class="panel-group " id="intro-accordion">
+        <div class="panel panel-default ">
+            <div class="panel-heading toggle-more-info">
+                <a class="toggle-text" data-parent="#intro-accordion" data-toggle="collapse" href="#intro-one">
+                    How we came to this answer
+                </a>
+            </div>
+            <div class="panel-collapse collapse" id="intro-one">
+                <div class="panel-body">
+                    <h4 class="path-heading">Publishing with open access</h4>
+                    <div class="zebra-green path">
+                        <p>Checking the journal in the Europe PMC/PubMed Central list of full members for automatic deposition within the tolerated embargo period.
+                        </p>
+                    </div>
+                    <ul>
+                        <li class="path-secondary">This journal is not in the PMC membership list.</li>
+                        <li class="path-secondary">Its paid open access option does not deposit papers automatically in Europe PMC/PubMed Central.</li>
+                    </ul>
+                    <div class="zebra-green path">
+                        <p>Compliance: no.
+                        </p>
+                    </div>
+                    <h4 class="path-heading"> Self-archiving in open access repositories</h4>
+                    <div class="zebra-green path">
+                        <p>Checking the journal in the Europe PMC/PubMed Central list of full members for automatic deposition within the tolerated embargo period.
+                        </p>
+                    </div>
+                    <ul>
+                        <li class="path-secondary">This journal is not a full member of PMC.
+                        </li>
+                    </ul>
+                    <div class="zebra-green path">
+                        <p>Finding the publisher of this journal.
+                        </p>
+                    </div>
+                    <ul>
+                        <li class="path-secondary">The publisher of this journal has been identified.
+                        </li>
+                    </ul>
+                    <div class="zebra-green path">
+                        <p>Finding the publisher of this journal.
+                        </p>
+                    </div>
+                    <ul>
+                        <li class="path-secondary">The publisher of this journal has been identified.
+                        </li>
+                    </ul>
+                    <div class="zebra-green path">
+                        <p> Checking if this an open access journal.
+                        </p>
+                    </div>
+                    <ul>
+                        <li class="path-secondary"> This journal is not listed in DOAJ as an open access journal.
+
+                        </li>
+                    </ul>
+                    <div class="zebra-green path">
+                        <p>Finding this journal’s open access policies.
+                        </p>
+                    </div>
+                    <ul>
+                        <li class="path-secondary">This journal’s policies have been read from RoMEO - ID 615.
+
+                        </li>
+                    </ul>
+                    <div class="zebra-green path">
+                        <p> Checking if the publisher has special arrangements for complying with funders’ open access policies.
+                        </p>
+                    </div>
+                    <ul>
+                        <li class="path-secondary">Checking RoMEO restrictions for special arrangements for funder: Wellcome Trust.
+                            No special arrangement found.
+                        </li>
+                        <li class="path-secondary">Checking RoMEO restrictions for generic arrangements for funders.
+                            No special arrangement found.
+                        </li>
+                        <li class="path-secondary">Checking RoMEO conditions for generic arrangements for funders.
+                            No special arrangement found.
+                        </li>
+                    </ul>
+                    <div class="zebra-green path">
+                        <p> Checking if the publisher’s version/PDF can be archived in the required named repositories.
+                        </p>
+                    </div>
+                    <ul>
+                        <li class="path-secondary">Archiving of the publisher’s version/PDF is either not permitted or not applicable.
+                        </li>
+                    </ul>
+                    <div class="zebra-green path">
+                        <p> Checking if the publisher’s version/PDF can be archived in any repository.
+                        </p>
+                    </div>
+                    <ul>
+                        <li class="path-secondary">Archiving of the publisher’s version/PDF is either not permitted or not applicable.
+                        </li>
+                    </ul>
+                    <div class="zebra-green path">
+                        <p>Compliance: no.
+                        </p>
+                    </div>
+                    <div class="zebra-green path">
+                        <a href="#" class="zebra-link">RoMEO record
+                        </a>
+                    </div>
+                    <div class="zebra-green path">
+                        <a href="#" class="zebra-link">JULIET record
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="disclaimer">FACT information is accurate to the best of our knowledge, but should not be relied upon for legal advice.
+        <div class="additional-info">
+            <p>Please <a href="#" class="feedback-link">send feedback to FACT</a> regarding inaccurate or missing data. </p>
+            <p>Data updated or checked: 07-Mar-2014.</p>
+        </div>
+        <div class="additional-info">
+            <p>Link for this page</p>
+            <input type="text" class="link-box"></input>
+        </div>
+
+        <a class="btn search-button view-button">View</a>
+    </div>
+
+    <hr class="rule">
+    <div class="clearfix">
+        <a href="#" class=" btn clear-results-button">Clear results</a>
+        <a href="#top" class=" btn go-top pull-right"><span class="fa fa-caret-up"> go to the top</span></a>
+
+    </div>
+</div>
