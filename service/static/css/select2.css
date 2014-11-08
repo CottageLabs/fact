@@ -149,8 +149,7 @@ html[dir="rtl"] .select2-container .select2-choice > .select2-chosen {
     top: 100%;
 
     background: #fff;
-    /*color: #414141;*/
-    color: #333;
+    color: #414141;
     border: 1px solid #aaa;
     border-top: 0;
 
@@ -390,8 +389,7 @@ html[dir="rtl"] .select2-results {
     padding: 3px 7px 4px;
     margin: 0;
     cursor: pointer;
-    /*color: #414141;*/
-    color: #333;
+    color: #414141;
 
     min-height: 1em;
 

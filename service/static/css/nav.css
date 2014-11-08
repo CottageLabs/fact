@@ -13,7 +13,10 @@
     display: inline-block;
     padding-left: 15px;
     color: #515151;
-    font-family: ProximaLight;
+    /*font-family: ProximaLight;*/
+    font-family: proxima-nova-alt, sans-serif;
+    font-weight: 100;
+    font-style: normal;
     font-size: 18px;
     line-height: 0;
 }
