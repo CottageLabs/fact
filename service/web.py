@@ -9,7 +9,10 @@ import sys
 
 @app.route("/")
 def root():
-    return render_template("index.html")
+    journal = request.values.get("journal", "")
+    funders = request.values.get("funders", "")
+    funders = [f for f in funders.split(",") if f != ""]
+    return render_template("index.html", journal=journal, funders=funders)
 
 
 # this allows us to override the standard static file handling with our own dynamic version

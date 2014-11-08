@@ -13,19 +13,23 @@
 
 
 {% block extra_js_bottom %}
+<script type="text/javascript">
+$(document).ready(function() {
+    // urgh - pollute the global namespace - naughty, but necessary at least for the time being
+    initJournal = "{{journal}}";
+    initFunders = [
+    {% for f in funders %}
+        "{{f}}"{% if not loop.last %},{% endif %}
+    {% endfor %}
+    ];
+});
+</script>
 
 <script type="text/javascript">
 $(document).ready(function() {
+
     $("#funders-select").select2({
         placeholder: 'Click to select Funders'
-    });
-
-    $("#clear-select").click(function(event) {
-        event.preventDefault();
-        $("#funders-select").select2("val", "");
-        $("#title_issn").select2("val", "");
-        $("#not-found").hide();
-        $("#form-errors").hide();
     });
 
     function titleIssnFormat(result) {
@@ -52,8 +56,25 @@ $(document).ready(function() {
         allow_any: true
     });
 
+    $("#clear-select").click(function(event) {
+        event.preventDefault();
+        $("#funders-select").select2("val", "");
+        $("#title_issn").select2("val", "");
+        $("#not-found").hide();
+        $("#form-errors").hide();
+    });
+
+    $("#clear-results").click(function(event) {
+        event.preventDefault();
+        $("#results-display").hide();
+    });
+
     function populateResults(params) {
         var fact = params.fact;
+
+        var romeo_link = "http://www.sherpa.ac.uk/romeo/search.php?issn=" + fact.issn();
+        var juliet_link = "http://www.sherpa.ac.uk/juliet/index.php?fPersistentID=" + fact.juliet_ids().join(",");
+
         $("#results-journal-name").html(fact.journal_name());
         $("#results-funder-name").html(fact.funder_names().join(", "));
         $("#results-issn").html(fact.issn());
@@ -157,7 +178,6 @@ $(document).ready(function() {
             $("#results-greenadvice-container").show();
         }
 
-        $("#results-overalladvice-container").hide();
         $("#results-overalladvice-list").empty();
 
         var overalladvice = fact.overall_advice();
@@ -170,11 +190,77 @@ $(document).ready(function() {
             $("#results-overalladvice-container").show();
         }
 
+        $("#results-editorpublisher-link").attr("href", romeo_link);
+        $("#results-funders-link").attr("href", juliet_link);
+
+        $("#results-noncompliance-warning").hide();
+        if (oc !== "yes") {
+            $("#results-noncompliance-warning").show();
+        }
+
+        /*
+        <div class="zebra-green path">
+            <p>Checking the journal in the Europe PMC/PubMed Central list of full members for automatic deposition within the tolerated embargo period.
+            </p>
+        </div>
+        <ul>
+            <li class="path-secondary">This journal is not in the PMC membership list.</li>
+            <li class="path-secondary">Its paid open access option does not deposit papers automatically in Europe PMC/PubMed Central.</li>
+        </ul>
+        */
+
+        function decisionList(params) {
+            var decisions = params.decisions;
+
+            var frag = "<ul>";
+            for (var i = 0; i < decisions.length; i++) {
+                var d = decisions[i];
+                frag += '<li class="path-secondary">' + d.text;
+                if (d.children && d.children.length > 0) {
+                    frag += decisionList({decisions : d.children});
+                }
+                frag += "</li>";
+            }
+            frag += "</ul>";
+            return frag;
+        }
+
+        var golddecision = fact.gold_decision();
+        var gd = "";
+        for (var i = 0; i < golddecision.length; i++) {
+            var d = golddecision[i];
+            var frag = '<div class="zebra-green path"><p>' + d.text + "</p></div>";
+            if (d.children && d.children.length > 0) {
+                frag += decisionList({decisions : d.children});
+            }
+            gd += frag;
+        }
+        $("#results-gold-decisions").html(gd);
+
+        var greendecision = fact.green_decision();
+        var grd = "";
+        for (var i = 0; i < greendecision.length; i++) {
+            var d = greendecision[i];
+            var frag = '<div class="zebra-green path"><p>' + d.text + "</p></div>";
+            if (d.children && d.children.length > 0) {
+                frag += decisionList({decisions : d.children});
+            }
+            grd += frag;
+        }
+        $("#results-green-decisions").html(grd);
+
+        $("#results-romeo-link").attr("href", romeo_link);
+        $("#results-juliet-link").attr("href", juliet_link);
+
+        if (!window.location.origin)
+        {
+            window.location.origin = window.location.protocol + "//" + window.location.host;
+        }
+        var url = window.location.origin + "?journal=" + fact.issn() + "&funders=" + fact.juliet_ids().join(",");
+        $('#results-link-box').val(url);
     }
 
-    $("#do-search").click(function(event) {
-        event.preventDefault();
-
+    function doSearch() {
         function factResults(data) {
             var fact = octopus.sherpafact.newFact({raw : data});
             if (fact.result_count() === 0) {
@@ -190,7 +276,6 @@ $(document).ready(function() {
         $("#results-display").hide();
         $("#not-found").hide();
         $("#form-errors").hide();
-        $("#searching").show();
 
         var joi = $("#title_issn").val();
         var fs = $("#funders-select").val();
@@ -200,12 +285,28 @@ $(document).ready(function() {
             return;
         }
 
+        if ('pushState' in window.history) {
+            var url = "?journal=" + joi + "&funders=" + fs.join(",");
+            window.history.pushState("", "", url);
+        }
+        $("#searching").show();
         octopus.sherpafact.proxy({
             journal_or_issn: joi,
             funders: fs,
             success: factResults
         });
+    }
+
+    $("#do-search").click(function(event) {
+        event.preventDefault();
+        doSearch();
     });
+
+    if (initJournal !== "" && initFunders.length > 0) {
+        $("#title_issn").select2("val", initJournal);
+        $("#funders-select").select2("val", initFunders);
+        doSearch();
+    }
 });
 </script>
 {% endblock%}
