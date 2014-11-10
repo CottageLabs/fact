@@ -20,12 +20,13 @@
     font-size: 18px;
     line-height: 0;
 }
+.tagline-color {
+    background-color: #6e8270;
+}
 .tagline {
     padding-left: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
-    margin-top: -21px;
-    background-color: #6e8270;
     color:#fff;
     font-size: 14px;
 }
@@ -43,6 +44,12 @@
 }
 .navbar.navbar-default {
     background-color: #fbfdfc;
+    margin-bottom: 0;
+}
+
+.navbar.navbar-default .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .navbar-default .navbar-nav>.open>a, .navbar-default .navbar-nav>.open>a:hover, .navbar-default .navbar-nav>.open>a:focus {
