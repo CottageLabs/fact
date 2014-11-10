@@ -31,14 +31,14 @@
             </li>
         </ol>
         <div class="clearfix">
-            <div id="not-found" style="display:none">
+            <div id="not-found" class="pull-left" style="display:none">
                 <p class="search-message"> No results found</p>
                 <a href="#" class="feedback-link"> Send us feedback</a>
             </div>
-            <div id="form-errors" style="display:none">
-                <p class="search-message"> We need more information to do your search - fill in both the boxes above</p>
+            <div id="form-errors" class="pull-left" style="display:none">
+                <p class="bold search-message"> We need more information to check compliance - please fill in both the boxes above</p>
             </div>
-            <div id="searching" style="display:none">
+            <div id="searching" class="pull-left" style="display:none">
                 <p class="search-message"><img src="{{url_for('static', filename='images/loading.gif')}}"> determining if you can comply with your funder's policy</p>
             </div>
             <a class="btn search-button pull-right" id="do-search">Search</a>

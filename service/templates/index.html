@@ -68,7 +68,7 @@ $(document).ready(function() {
 
     $("#clear-results").click(function(event) {
         event.preventDefault();
-        $("#results-display").hide();
+        $("#results-display").slideUp(500);
     });
 
     function populateResults(params) {
@@ -271,11 +271,11 @@ $(document).ready(function() {
             } else if (fact.result_count() === 1) {
                 populateResults({fact: fact});
                 $("#searching").hide();
-                $("#results-display").show();
+                $("#results-display").slideDown(500);
             }
         }
 
-        $("#results-display").hide();
+        $("#results-display").slideUp(200);
         $("#not-found").hide();
         $("#form-errors").hide();
 
