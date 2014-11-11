@@ -24,7 +24,6 @@
     background-color: #6e8270;
 }
 .tagline {
-    padding-left: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
     color:#fff;
@@ -92,13 +91,17 @@
 .navbar-default .navbar-toggle:focus{
     background-color: #f8f8f2;
 }
-@media(min-width: 768px){
-    .tagline {
-    padding-left: 30px;
-    }
-}
+
 .navbar-nav>li>.dropdown-menu {
     -webkit-box-shadow: 3px 2px 0px(0,0,0,.175)!important; 
     box-shadow: 3px 2px 0px rgba(0,0,0,.175)!important;
     border: none!important;
+}
+
+@media (max-width: 768px) {
+    .navbar-header.sherpa-header{
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 5px;
+    }
 }
