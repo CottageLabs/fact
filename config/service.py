@@ -16,6 +16,9 @@ ELASTIC_SEARCH_MAPPINGS = [
     "service.dao.JournalAutocompleteDAO"
 ]
 
+def journal_ac_input_filter(val):
+    return val.lower()
+
 AUTOCOMPLETE_COMPOUND = {
     "journal" : {                                  # name of the autocomplete, as represented in the URL (have as many of these sections as you need)
         "fields" : ["issn", "journal"],         # fields to return in the compound result
@@ -25,12 +28,13 @@ AUTOCOMPLETE_COMPOUND = {
                 "end_wildcard": True,           # apply end wildcard?
                 "boost" : 2.0                   # boost to apply to matches on this field
             },
-            "journal.exact" : {
+            "journal_lower.exact" : {
                 "start_wildcard" : True,
                 "end_wildcard": True,
                 "boost" : 1.0
             }
         },
+        "input_filter" : journal_ac_input_filter,
         "default_size" : 10,                    # if no size param is specified, this is how big to make the response
         "max_size" : 25,                        # if a size param is specified, this is the limit above which it won't go
         "dao" : "service.dao.JournalAutocompleteDAO"           # classpath for DAO which accesses the underlying ES index

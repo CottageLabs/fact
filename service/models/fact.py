@@ -18,3 +18,7 @@ class JournalAutocomplete(dao.JournalAutocompleteDAO):
     @journal.setter
     def journal(self, val):
         self.data["journal"] = val
+
+    def prep(self):
+        """called before save is run"""
+        self.data["journal_lower"] = self.data.get("journal", "").lower()
