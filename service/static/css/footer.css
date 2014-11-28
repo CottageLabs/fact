@@ -4,8 +4,9 @@
     color: #fff;
 }
 .sponsors{
-    padding-left: 15px;
+    /* padding-left: 15px; */
 }
+
 .footer-dark h3{
     font-size: 14px;
 }
@@ -25,6 +26,11 @@
 .disclaimer {
     margin: 25px 15px 15px 15px;
 }
+
+.disclaimer-legal {
+    padding-top: 25px;
+}
+
 .footer-disclaimer{
     color: #fff;
     font-size: 10px;
