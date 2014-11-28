@@ -351,7 +351,10 @@ $(document).ready(function() {
                     doSearch();
                 });
             }
+            $("#do-search").removeAttr("disabled");
         }
+
+        $("#do-search").attr("disabled", "disabled");
 
         $("#multiple-results").slideUp(200);
         $("#results-display").slideUp(200);
@@ -363,6 +366,7 @@ $(document).ready(function() {
 
         if (joi === "" || !fs || fs.length === 0) {
             $("#form-errors").show();
+            $("#do-search").removeAttr("disabled");
             return;
         }
 
