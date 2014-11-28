@@ -1,0 +1,749 @@
+{% extends "base.html" %}
+
+{% block content %}
+        <div class="container-fluid">
+
+            <div class="row gradient">
+                <div class="col-sm-12">
+                    <div class="info-box">
+                        <div class="box-wrapper">
+                            <h2 class="form-heading"> Application Programmers’ Interface</h2>
+                            <p>The Application Programmers’ Interface (API) will be of interest to anyone who wishes to customise SHERPA/FACT for their institutions. For instance, the API would enable you to:</p>
+                            <ul>
+                                <li class="definitions">Embed FACT within your own branded web pages</li>
+                                <li class="definitions">Link to local information on open access funds, guides, policies, and advisors</li>
+                                <li class="definitions">Reformat the FACT data, for example to highlight local policies and preferences.</li>
+                            </ul>
+                            <p>The FACT API can also be used for statistical studies, such as checking the potential compliance of lists of journals or articles. E.g. see this Presentation to OR2013, slides 20 to 23.</p>
+
+                            <h3 class="secondary-heading"> Current prototype</h3>
+                            <p class="warning">This API is a beta test version, and should not be used for business-critical applications.</p>
+                            <p>The FACT API works in a similar manner to the <a class="faq-link" href="http://www.sherpa.ac.uk/romeo/apimanual.php?la=en">SHERPA/RoMEO API</a> and <a class="faq-link" href="http://www.sherpa.ac.uk/romeo/apimanual.php?la=en">SHERPA/JULIET API</a>, where queries and output options are specified by adding parameters to a base URL. These are listed and described below.</p>
+
+                            <p>The base URL is:</p>
+                            <a class="faq-link" href="http://www.sherpa.ac.uk/fact/api-beta">www.sherpa.ac.uk/fact/api-beta</a>
+                            <p class="para-style">We would very much appreciate <a class="faq-link" href="#">feedback </a>on any aspect fo this prototype, for instance; how far it goes towards meeting your requirements, the suitability of the output, etc.</p>
+                            <h3 class="secondary-heading"> Parameters</h3>
+                            <p>Parameter names are case sensitive, but their values are case insensitive. Where they contain spaces or other special characters, they should be URL-encoded.</p>
+
+                            <p>Parameters may be used in combination, although logically incompatible combinations may yield zero results.</p>
+                            <h3 class="secondary-heading"> Query Parameters</h3>
+                            <div class="row row-margin-top">
+                                <div class="col-sm-3 query" >• &ak=</div>
+                                <div class=" col-sm-9 query-description">
+                                    <p> Access Key - a unique string of letters and numbers for each user appication, obtainable from: <a class="faq-link" href="http://www.sherpa.ac.uk/romeo/apiregistry"> www.sherpa.ac.uk/romeo/apiregistry</a>- Required.</p>
+                                    <p>e.g. <a class="faq-link" href="http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&issn=2230-326X&juliet_id=705">http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&issn=2230-326X&juliet_id=705</a></p>
+                                    <p class="red">The Access Key used in the examples on this page is a dummy key. You must substitute your own Access Key in the URLs to see the results. </p>
+                                    <p class="red">If you already have a RoMEO API Access Key, enter it here: <input> and <a class="btn btn-small">Regenerate the examples</a></p>
+                                </div> 
+                            </div>
+                            <div class="row row-margin-top">
+                                <div class="col-sm-3 query" >• &juliet_id=</div>
+                                <div class=" col-sm-9 query-description">
+                                    <p> Funder’s JULIET persistent identifier - comma separated list of numbers - Required.</p>
+                                    <p>e.g. <a class="faq-link" href="http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&issn=0025-7273&juliet_id=695">http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&issn=0025-7273&juliet_id=695</a></p>
+                                    <p>See the list of supported funders below</p>
+                                </div> 
+                            </div>   
+                            <div class="row row-margin-top">
+                                <div class="col-sm-3 query" >• &journaltitle=</div>
+                                <div class=" col-sm-9 query-description">
+                                    <p>Journal title string - full title or standard abbreviations - Required, if <strong>&issn=</strong> not specified.</p>
+                                    <p>e.g. <a class="faq-link" href=" http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=722&journaltitle=journal%20of%20medicinal%20chemistry"> http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=722&journaltitle=journal%20of%20medicinal%20chemistry</a></p>
+                                </div> 
+                            </div>    
+                            <div class="row row-margin-top">
+                                <div class="col-sm-3 query" >• &querytype=</div>
+                                <div class=" col-sm-9 query-description">
+                                    <p>Type of journal title search. One of <strong>exact</strong> [default], <strong>starts</strong>, or <strong>contains</strong>. Only used with the <strong>&journaltitle= parameter.</strong></p>
+                                    <p>e.g. <a class="faq-link" href=" http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=722&journaltitle=journal%20of%20medicinal%20chemistry"> http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=722&journaltitle=journal%20of%20medicinal%20chemistry</a></p>
+                                </div> 
+                            </div>    
+                            <div class="row row-margin-top">
+                                <div class="col-sm-3 query" >• &issn=</div>
+                                <div class=" col-sm-9 query-description">
+                                    <p>ISSN (International Standard Serial Number) - e.g. <strong>1535-9778</strong> - Required, if <strong>&journaltitle=</strong> not specified.</p>
+                                    <p>e.g. <a class="faq-link" href="http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=709&issn=1535-9778"> http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=709&issn=1535-9778</a></p>
+                                </div> 
+                            </div>  
+
+
+                            <h3 class="secondary-heading"> Output Parameters</h3>
+                            <div class="row row-margin-top">
+                                <div class="col-sm-2 query" >• &markup=</div>
+                                <div class=" col-sm-10 query-description">
+                                    <p>Markup format for output. One of:</p>
+
+                                    <div class="row row-margin-top">
+                                        <div class="col-sm-2 query">• xml</div>
+                                        <div class="col-sm-10 ">
+                                            <p>XML [default]</p>
+                                            <p>e.g. <a class="faq-link" href="http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=717&issn=0378-4266&markup=xml">http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=717&issn=0378-4266&markup=xml</a></p> 
+                                        </div>
+                                    </div>
+
+                                    <div class="row row-margin-top">
+                                        <div class="col-sm-2 query">• json</div>
+                                        <div class="col-sm-10 ">
+                                            <p> JSON </p>
+                                            <p>e.g. <a class="faq-link" href="http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=705&issn=2151-4585&markup=json">http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=705&issn=2151-4585&markup=json</a></p> 
+                                        </div>
+                                    </div>
+
+                                    <div class="row row-margin-top">
+                                        <div class="col-sm-2 query">• php</div>
+                                        <div class="col-sm-10">
+                                            <p>PHP array definition code for use in eval() commands.</p>
+                                            <p>e.g. <a class="faq-link" href=" http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=726&issn=1758-2083&markup=php"> http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=726&issn=1758-2083&markup=php</a></p> 
+                                        </div>        
+                                    </div>
+
+                                    <div class="row row-margin-top">
+                                        <div class="col-sm-12">
+                                            <p>Future additional alternative mark-up formats will be considered</p>
+                                        </div>
+                                    </div>    
+
+                                    <div class="row row-margin-top">
+                                        <div class="col-sm-3 query">• &trail=</div>
+                                        <div class="col-sm-9 ">
+                                            <p>show or hide the decision trail for this journal from the FACT algorithm - default hide.</p>
+                                            <p>e.g. <a class="faq-link" href=" http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=698&trail=show&issn=1350-7524"> http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=698&trail=show&issn=1350-7524</a></p> 
+                                        </div>        
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-margin-top">
+                                <div class="col-sm-12">
+                                    <h3 class="secondary-heading"> Output </h3>
+                                    <p>ARGUMENTS AND DATA</p>
+                                    <p>In general, all computable information is returned as arguments and displayable information is returned as data. This is implemented for each of the <strong>&markup=</strong> options as in the following examples:</p>
+                                    <p class="bold">XML</p>
+                                    <pre class="code-box">&ltgoldcompliance goldcompliancecode=”yes” goldcompliancereport=”paidoa”&gtYou can publish your article compliantly with open access&lt/goldcompliance&gt</pre>
+                                    <p class="bold">JSON</p>
+                                    <pre class="code-box">"arg_goldcompliancecode": "yes",
+"arg_goldcompliancereport": "paidoa",
+"val_goldcompliance": "You can publish your article compliantly with open access",</pre>
+                                  <p class="bold">PHP</p>
+                                  <pre class="code-box">'goldcompliance' => array (
+  '_args' => array (
+    'goldcompliancecode' => "yes",
+    'goldcompliancereport' => "paidoa"
+  ),
+  '_data' => "You can publish your article compliantly with open access"
+),</pre>
+                                      <div class="row row-margin-top">
+                                        <div class="col-sm-12">
+                                            <h3 class="secondary-heading"> Compliance Codes </h3>
+                                            <p>Separate compliance information is given for the funder’s Gold (publishing with open access), Green (self-archiving in open access repositories), and Overall policies. Compliance codes have one of four values:</p>
+                                            <dl class="dl-horizontal">
+                                              <dt class="monaco">yes =</dt>
+                                              <dd>Compliant.</dd>
+                                              <dt class="monaco">maybe = </dt>
+                                              <dd>Possibly compliant, subject to further checks by the author.<dd>
+                                              <dt class="monaco">no =</dt>
+                                              <dd>Non-compliant.</dd>
+                                              <dt class="monaco">unknown =</dt>
+                                              <dd>Compliance unknown due to missing or unclear policy information</dd>
+                                              </dl>
+                                          </div>
+                                      </div>
+                                      <div class="row ">
+                                        <div class="col-sm-12">
+                                            <h3 class="secondary-heading"> Links within Data </h3>
+                                            <p>In SHERPA/FACT’s human interface, some information includes hyperlinks. These are parsed out into arguments for API output. e.g.:</p>
+                                            <samp class="samp-style">
+                                            Confirm that it is published under a <a class="faq-link" href="http://creativecommons.org/licenses/">Creative Commons</a> Attribution (CC-BY) or more open licence.
+                                            </samp>
+                                            <p class="p-padding-top">becomes:</p>
+                                            <code class="monaco code-style">
+                                            &ltgoldconfirm goldconfirmcode=”confirmgoldlicence” goldconfirmlinkurl=”http://creativecommons.org/licenses/” goldconfirmlinktext=”Creative Commons”&gtConfirm that it is published under a Creative Commons Attribution (CC-BY) or more open licence.&lt/goldconfirm&gt
+                                            </code class="monaco code-style">
+                                            <p class="p-padding-top">The <strong>...linktext</strong> is the text marked as the link in the original data, while the <strong>...linkurl</strong> is the corresponding URL. <strong>...linktext</strong> and <strong>...linkurl</strong> can therefore be used in a string substitution function to recreated the original hyperlink.
+                                            </p>
+                                            <p>Multiple Links. Only one <strong>...linktext</strong> and one <strong>...linkurl</strong> are allowed. If there is more than one hyperlink, space-separated URLs are given in <strong>...linkurl</strong> and their corresponding link texts are given separated by ‘|’ characters in <strong>...linktext</strong>. e.g.
+                                            </p>
+                                            <samp class="samp-style">
+                                            You cannot readily archive your article compliantly in <a class="faq-link" href="http://europepmc.org/">Europe PMC</a>/<a class="faq-link" href="http://www.ncbi.nlm.nih.gov/pmc/">Pubmed Central</a>
+                                            </samp>
+                                            <p class="p-padding-top">becomes:</p>
+                                            <code class="monaco code-style">
+                                            &ltgreencompliance greencompliancecode=”no” greencompliancereport=”noncompliant” greencompliancelinkurl=”http://europepmc.org/ http://www.ncbi.nlm.nih.gov/pmc/” greencompliancelinktext=”Europe PMC|Pubmed Central”&gt:You cannot readily archive your article compliantly in Europe PMC/Pubmed Central&lt/greencompliance&gt
+                                            </code>
+                                        </div>
+                                    </div>
+                                    <div class="row row-margin-top">
+                                        <div class="col-sm-12">
+                                            <h3 class="secondary-heading"> Supported Funders </h3>
+                                            <div class="table-responsive">
+                                                <table class="table table-style">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="bold">Funder</th>
+                                                            <th class="bold">JULIET_ID</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>Arthritis Research UK</td>
+                                                            <td>14</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Arts and Humanities Research Council (AHRC)</td>
+                                                            <td>698</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Biotechnology and Biological Sciences Research Council (BBSRC)  </td>
+                                                            <td>706</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Breast Cancer Campaign</td>
+                                                            <td>873</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>British Heart Foundation    </td>
+                                                            <td>18</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Cancer Research UK  </td>
+                                                            <td>19</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Economic and Social Research Council (ESRC)</td>
+                                                            <td>717</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Engineering and Physical Sciences Research Council (EPSRC)</td>
+                                                            <td>722</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Leukaemia & Lymphoma Research</td>
+                                                            <td>925</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Medical Research Council (MRC)</td>
+                                                            <td>705</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Natural Environment Research Council (NERC)</td>
+                                                            <td>726</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Science and Technology Facilities Council (STFC)</td>
+                                                            <td>716</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>Wellcome Trust</td>
+                                                            <td>695</td>
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row ">
+                                        <div class="col-sm-12">
+                                            <h3 class="secondary-heading"> FACT Compliance Codes </h3>
+                                            <h4 class="bold"> Gold compliance </h4>
+                                            <div class="table-responsive">
+                                                <table class="table table-style">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="light-green">code</th>
+                                                            <th class="light-green">report</th>
+                                                            <th class="light-green">description</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>yes</td>
+                                                            <td>oaj</td>
+                                                            <td>Open access journal</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>yes</td>
+                                                            <td>paidoa</td>
+                                                            <td>Paid open access option</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>yes</td>
+                                                            <td>romeooaj</td>
+                                                            <td>RoMEO-listed open access journal</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>yes</td>
+                                                            <td>doaj</td>
+                                                            <td>Compliant DOAJ-Listed open access journal</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>maybe</td>
+                                                            <td>checkissues</td>
+                                                            <td>Compliant subject to one or more issues being checked</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>maybe</td>
+                                                            <td>doaj</td>
+                                                            <td>DOAJ-listed journal, compliant subject to one or more issues being checked</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>no</td>
+                                                            <td>noncompliant</td>
+                                                            <td>Non-compliant</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>no</td>
+                                                            <td>nopmc</td>
+                                                            <td>Not automatically deposited in Pubmed Central</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>no</td>
+                                                            <td>unavailable</td>
+                                                            <td>Gold options unavailable</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>unknown</td>
+                                                            <td>nopublisher</td>
+                                                            <td>Publisher not known</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>unknown</td>
+                                                            <td>unlisted</td>
+                                                            <td>Not listed in RoMEO or other journal databases</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>-</td>
+                                                            <td>notrequired</td>
+                                                            <td>Gold option not required by the funder</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <h4 class="bold"> Green compliance </h4>
+                                            <div class="table-responsive">
+                                                <table class="table table-style">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="light-green">code</th>
+                                                            <th class="light-green">report</th>
+                                                            <th class="light-green">description</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>yes</td>
+                                                            <td>compliantaccepted</td>
+                                                            <td>Author’s accepted version may be self-archived compliantly</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>yes</td>
+                                                            <td>compliantdoaj</td>
+                                                            <td>DOAJ-listed open access journal may be self-archived compliantly</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>yes</td>
+                                                            <td>compliantpdf</td>
+                                                            <td>Publisher’s version may be self-archived compliantly</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>yes</td>
+                                                            <td>compliantpmc</td>
+                                                            <td>Compliantly archived automatically in Pubmed Central</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>yes</td>
+                                                            <td>special</td>
+                                                            <td>Compliant special arrangement for the funder</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>yes</td>
+                                                            <td>pmclistonly</td>
+                                                            <td>Compliantly archived automatically in Pubmed Central but not self-archivable</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>maybe</td>
+                                                            <td>checkaccepted</td>
+                                                            <td>Author’s accepted version may be self-archived compliantly subject to one or more issues being checked</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>maybe</td>
+                                                            <td>checkdoaj</td>
+                                                            <td>DOAJ-listed journal, compliant subject to one or more issues being checked</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>maybe</td>
+                                                            <td>checkembargo</td>
+                                                            <td>Confirm that the embargo complies</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>maybe</td>
+                                                            <td>checkpdf</td>
+                                                            <td>Publisher’s version may be self-archived compliantly subject to one or more issues being checked</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>maybe</td>
+                                                            <td>checkrcukextension</td>
+                                                            <td>Confirm that the RCUK conditions for an extended embargo apply</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>maybe</td>
+                                                            <td>pmclistonly</td>
+                                                            <td>Compliantly archived automatically in Pubmed Central subject to one or more issues being checked</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>no</td>
+                                                            <td>noncompliant</td>
+                                                            <td>Non-compliant</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>no</td>
+                                                            <td>noncompliantdoaj</td>
+                                                            <td>Non-compliant DOAJ-listed open access journal</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>no</td>
+                                                            <td>prohibited</td>
+                                                            <td>Self-archiving prohibited</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>unknown</td>
+                                                            <td>doaj</td>
+                                                            <td>DOAJ-listed open access journal may be compliant</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>unknown</td>
+                                                            <td>nopublisher</td>
+                                                            <td>Publisher not known</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>unknown</td>
+                                                            <td>unclear</td>
+                                                            <td>Publisher’s policy not clear</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>unknown</td>
+                                                            <td>unlisted</td>
+                                                            <td>Not listed in RoMEO or other journal databases</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>-</td>
+                                                            <td>notrequired</td>
+                                                            <td>Green option not required by the funder</td>
+                                                        </tr>
+                                                       
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                            <h4 class="bold">  Overall compliance </h4>
+                                            <div class="table-responsive">
+                                                <table class="table table-style">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="light-green">code</th>
+                                                            <th class="light-green">report</th>
+                                                            <th class="light-green">description</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td>yes</td>
+                                                            <td>prefergoldovergreen</td>
+                                                            <td>Prefer the gold option to the green option</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>yes</td>
+                                                            <td>prefergreen</td>
+                                                            <td>Prefer the green option to the gold option</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>yes</td>
+                                                            <td>usegold</td>
+                                                            <td>Use the gold option</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>yes</td>
+                                                            <td>usegoldandgreen</td>
+                                                            <td>Use both the gold and green options</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>yes</td>
+                                                            <td>usegoldandorgreen</td>
+                                                            <td>Use either the gold or green options</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>yes</td>
+                                                            <td>usegreen</td>
+                                                            <td>Use the green option</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>maybe</td>
+                                                            <td>checkgold</td>
+                                                            <td>Use the gold option subject to one or more issues being checked</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>maybe</td>
+                                                            <td>checkgoldandgreen</td>
+                                                            <td>Use both the gold and green options subject to one or more issues being checked</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>maybe</td>
+                                                            <td>checkgoldandorgreen</td>
+                                                            <td>Use either the gold or green options subject to one or more issues being checked</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>maybe</td>
+                                                            <td>checkgoldgreenunknown</td>
+                                                            <td>Use the gold option subject to one or more issues being checked, ignoring unknown green option</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>maybe</td>
+                                                            <td>checkgreen</td>
+                                                            <td>Use the green option subject to one or more issues being checked</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>maybe</td>
+                                                            <td>goldunknowncheckgreen</td>
+                                                            <td>Use the green option subject to one or more issues being checked, ignoring unknown gold option</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>no</td>
+                                                            <td>nogold</td>
+                                                            <td>Non-compliant because no compliant gold option is available</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>no</td>
+                                                            <td>nogreen</td>
+                                                            <td>Non-compliant because no compliant green option is available</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>no</td>
+                                                            <td>noncompliant</td>
+                                                            <td>Non-compliant</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>unknown</td>
+                                                            <td>goldunknown</td>
+                                                            <td>Gold compliance unknown</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>unknown</td>
+                                                            <td>goldunknowngreenunknown</td>
+                                                            <td>Neither gold nor green compliance known</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td>unknown</td>
+                                                            <td>greenunknown</td>
+                                                            <td>Green compliance unknown</td>
+                                                        </tr>
+                                                        
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h3 class="secondary-heading"> Sample XML Output </h3>
+                                <pre class="code-box">&lt?xml version=”1.0” encoding=”utf-8” ?&gt
+&ltfactapi version=”1.3”>
+    &ltcontrol>
+        &ltparameterlist>
+            &ltparameter source=”specified”>
+                &ltparametername>juliet_id&lt/parametername>
+                &ltparametervalue>722&lt/parametervalue>
+            &lt/parameter>
+            &ltparameter source=”specified”>
+                &ltparametername>issn&lt/parametername>
+                &ltparametervalue>1099-8292&lt/parametervalue>
+            &lt/parameter>
+            &ltparameter source=”default”>
+                &ltparametername>lang&lt/parametername>
+                &ltparametervalue>en&lt/parametervalue>
+            &lt/parameter>
+            &ltparameter source=”default”>
+                &ltparametername>markup&lt/parametername>
+                &ltparametervalue>xml&lt/parametervalue>
+            &lt/parameter>
+            &ltparameter source=”default”>
+                &ltparametername>trail&lt/parametername>
+                &ltparametervalue>hide&lt/parametervalue>
+            &lt/parameter>
+            &lt/parameterlist>
+            &lttimestamp>2013-10-08 04:06:25&lt/timestamp>
+            &ltnum_funders>1&lt/num_funders>
+        &ltnum_journals>1&lt/num_journals>
+        &ltoutcome>singleJournal&lt/outcome>
+        &ltmessagelist />
+        &ltlicence>SHERPA/FACT data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the ‘conditions for re-use’ at the &lt;licenceurl /&gt;, and linked-to from the SHERPA/RoMEO home page.&lt/licence>
+        &ltlicenceurl>http://www.sherpa.ac.uk/romeoreuse.html&lt/licenceurl>
+        &ltdisclaimer>All SHERPA/FACT information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of FACT data, or for alternative interpretations which are derived from this information.&lt/disclaimer>
+        &lt/control>
+        &ltfunderlist>
+            &ltfunder juliet_id=”722”>
+                &ltname>Engineering and Physical Sciences Research Council&lt/name>
+                &ltacronym>EPSRC&lt/acronym>
+                &lturl>http://www.epsrc.ac.uk/&lt/url>
+            &lt/funder>
+        &lt/funderlist>
+        &ltjournallist>
+            &ltjournal issn=”1099-8292”>
+                &lttitle>Internet Journal of Chemistry&lt/title>
+                &ltpublisher romeo_id=”43”>Internet Journal of Chemistry&lt/publisher>
+            &lt/journal>
+        &lt/journallist>
+        &ltoverall>
+            &ltoverallcompliance overallcompliancecode=”yes” overallcompliancereport=”usegreen”>You can comply with your funder’s policy:&lt/overallcompliance>
+            &ltoverallrecommendation overallrecommendationcode=”usegreen”>You should self-archive your article within 6 months of publication.&lt/overallrecommendation>
+            &ltoveralladvicelist />
+        &lt/overall>
+        &ltgold>
+            &ltgoldcompliance goldcompliancecode=”no” goldcompliancereport=”unavailable”>You cannot publish your article with open access&lt/goldcompliance>
+            &ltgoldreason>This is not an open access journal, nor does it have a paid open access option.&lt/goldreason>
+            &ltgoldfee />
+            &ltgoldadvicelist />
+            &ltgoldconfirmlist />
+            &ltgoldprocesslist />
+            &ltgolddecisionlist />
+        &lt/gold>
+        &ltgreen>
+            &ltgreencompliance greencompliancecode=”yes” greencompliancereport=”compliantaccepted”>You can archive your article compliantly in an open access repository&lt/greencompliance>
+            &ltgreenreason>You may deposit the Accepted version of your article in open access repositories upon publication.&lt/greenreason>
+            &ltgreenadvicelist>
+                &ltgreenadvice greenadvicecode=”archive”>Please ensure that your article is deposited in an open access repository within 6 months of publication.&lt/greenadvice>
+                &ltgreenadvice greenadvicecode=”opendoar” greenadvicelinkurl=”http://www.opendoar.org/find.php” greenadvicelinktext=”OpenDOAR”>If necessary, use OpenDOAR to find your institution’s repository.&lt/greenadvice>
+            &lt/greenadvicelist>
+        &ltgreenconfirmlist />
+        &ltgreendecisionlist />
+    &lt/green>
+&lt/factapi></pre>
+                                </div>
+                            </div>
+                            <div class="row row-margin-top">
+                                <div class="col-sm-12">
+                                    <h3 class="secondary-heading"> Sample JSON Output </h3>
+                                    <pre class="code-box">{
+ {
+    "control": {
+        "parameter": [
+            {
+                "arg_source": "specified",
+                "val_parametername": "juliet_id",
+                "val_parametervalue": 705
+            },
+            {
+                "arg_source": "specified",
+                "val_parametername": "issn",
+                "val_parametervalue": "2151-4585"
+            },
+            {
+                "arg_source": "specified",
+                "val_parametername": "markup",
+                "val_parametervalue": "json"
+            },
+            {
+                "arg_source": "default",
+                "val_parametername": "lang",
+                "val_parametervalue": "en"
+            },
+            {
+                "arg_source": "default",
+                "val_parametername": "trail",
+                "val_parametervalue": "hide"
+            }
+        ],
+        "val_timestamp": "2013-10-30 12:07:09",
+        "val_num_funders": 1,
+        "val_num_journals": 1,
+        "val_outcome": "singleJournal",
+        "message": [],
+        "val_licence": "SHERPA/FACT data is available for re-use under a Creative Commons Attribution-Non-Commercial-Share Alike 2.5 licence. For more details, please see the 'conditions for re-use' at the , and linked-to from the SHERPA/RoMEO home page.",
+        "val_licenceurl": "http://www.sherpa.ac.uk/romeoreuse.html",
+        "val_disclaimer": "All SHERPA/FACT information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of FACT data, or for alternative interpretations which are derived from this information."
+    },
+    "funder": [
+        {
+            "arg_juliet_id": 705,
+            "val_name": "Medical Research Council",
+            "val_acronym": "MRC",
+            "val_url": "http://www.mrc.ac.uk/"
+        }
+    ],
+    "journal": [
+        {
+            "arg_issn": "2151-4585",
+            "val_title": "Geriatric Orthopaedic Surgery and Rehabilitation",
+            "arg_romeo_id": 65,
+            "val_publisher": "SAGE Publications (UK and US)"
+        }
+    ],
+    "overall": {
+        "arg_overallcompliancecode": "yes",
+        "arg_overallcompliancereport": "usegoldandorgreen",
+        "val_overallcompliance": "You can comply with your funder's policy:",
+        "arg_overallrecommendationcode": "usegoldandorgreen",
+        "val_overallrecommendation": "Use either of the required methods.",
+        "overalladvice": []
+    }
+    "gold": {
+        "arg_goldcompliancecode": "yes",
+        "arg_goldcompliancereport": "paidoa",
+        "val_goldcompliance": "You can publish your article compliantly with open access",
+        "arg_goldreasonlinkurl": "http://www.uk.sagepub.com/sagechoice.sp",
+        "arg_goldreasonlinktext": "SAGE Choice",
+        "val_goldreason": "Paid open access option available - SAGE Choice - with a range of Creative Commons licences to be selected or confirmed by the author.",
+        "val_goldfee": "Indicative fee: £800-£1600, $1500-$3000 per article - Author must request Creative Commons Attribution License",
+        "goldadvice": [
+            {
+                "arg_goldadvicecode": "authorscopyright",
+                "val_goldadvice": "You retain the copyright of your article."
+            }
+        ],
+        "goldconfirm": [
+            {
+                "arg_goldconfirmcode": "confirmgoldlicence",
+                "arg_goldconfirmlinkurl": "http://creativecommons.org/licenses/",
+                "arg_goldconfirmlinktext": "Creative Commons",
+                "val_goldconfirm": "Confirm that articles are published under a Creative Commons Attribution (CC-BY) or more open licence."
+            }
+        ],
+        "goldprocess": [
+            {
+                "arg_goldprocesscode": "paidoarequest",
+                "val_goldprocess": "Your notification of acceptance should invite you to use the open access option. If not, or if already published, contact the journal's editor."
+            }
+        ],
+        "golddecision": []
+    }
+    "green": {
+        "arg_greencompliancecode": "yes",
+        "arg_greencompliancereport": "compliantpmc",
+        "arg_greencompliancelinkurl": "http://europepmc.org/ http://www.ncbi.nlm.nih.gov/pmc/",
+        "arg_greencompliancelinktext": "Europe PMC|Pubmed Central",
+        "val_greencompliance": "You can archive your article compliantly in Europe PMC/Pubmed Central",
+        "arg_greenreasonlinkurl": "http://europepmc.org/ http://www.ncbi.nlm.nih.gov/pmc/",
+        "arg_greenreasonlinktext": "Europe PMC|Pubmed Central",
+        "val_greenreason": "This journal will automatically deposit the Publisher's version/PDF of your article in Europe PMC/Pubmed Central at the time of publication.",
+        "greenadvice": [
+            {
+                "arg_greenadvicecode": "nospecialaction",
+                "val_greenadvice": "No special action required"
+            }
+        ],
+        "greenconfirm": [],
+        "greendecision": []
+    }
+}
+                                    </pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        
+                                
+{% endblock %}
