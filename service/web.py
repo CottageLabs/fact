@@ -30,8 +30,25 @@ app.register_blueprint(autocomplete, url_prefix='/autocomplete')
 from octopus.modules.sherpafact.proxy import blueprint as fact
 app.register_blueprint(fact, url_prefix="/fact")
 
-from octopus.modules.examples.examples import blueprint as examples
-app.register_blueprint(examples, url_prefix="/examples")
+#from octopus.modules.examples.examples import blueprint as examples
+#app.register_blueprint(examples, url_prefix="/examples")
+
+@app.route("/help")
+def help():
+    return render_template("help.html")
+
+@app.route("/faq")
+def faq():
+    return render_template("faq.html")
+
+@app.route("/api")
+def api():
+    return render_template("api.html")
+
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
 
 @app.errorhandler(404)
 def page_not_found(e):

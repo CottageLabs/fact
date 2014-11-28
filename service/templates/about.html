@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+    <div class="row gradient">
+        <div class="col-sm-12">
+            <div class="info-box">
+                <div class="box-wrapper">
+                    <h2 class="form-heading"> About FACT</h2>
+
+                    <p>SHERPA/FACT (Funders’ & Authors’ Compliance Tool) is a tool to help researchers check whether or
+                        not the journals in which they wish to publish their results comply with their funder’s
+                        requirements for open access to research.</p>
+
+                    <p>FACT combines and interprets data from <a class="faq-link"
+                                                                 href="http://www.sherpa.ac.uk/romeo/index.php">SHERPA/RoMEO</a>,
+                        <a class="faq-link" href="http://www.sherpa.ac.uk/romeo/index.php">SHERPA/JULIET</a> and other
+                        sources to provide clear guidance to researchers, on compliance with <a class="faq-link"
+                                                                                                href="http://www.rcuk.ac.uk/">Research
+                            Councils UK </a> and <a class="faq-link" href="http://www.wellcome.ac.uk/">Wellcome
+                            Trust</a> Open Access policies, and offers advice on their available options.</p>
+
+                    <p>The tool:</p>
+                    <ul>
+                        <li class="definitions">Allows authors to select which of members of RCUK or Wellcome Trust has
+                            funded their work.
+                        </li>
+                        <li class="definitions">Allows authors to enter the journal name, name abbreviation or ISSN of
+                            the journal they wish to use.
+                        </li>
+                        <li class="definitions">Cross-references the information held in RoMEO and in JULIET on both
+                            Funders’ and Publishers’ policies.
+                        </li>
+                        <li class="definitions">Gives the author clear information as to whether that journal or
+                            publisher offers publication or archiving rights compliant with their funders’ policy.
+                        </li>
+                        <li class="definitions">Notes the level of OA fee payable, if any, and where this information is
+                            available on the publisher site.
+                        </li>
+                        <li class="definitions">Gives guidance to the author as to what action to take next in order to
+                            comply with their funders’ policy.
+                        </li>
+                        <li class="definitions">There is also an Application Programmers’ Interface (API) available.
+                        </li>
+                    </ul>
+
+                    <p>SHERPA/FACT is maintained by the <a class="faq-link" href="http://crc.nottingham.ac.uk/">Centre
+                        for Research Communications (CRC)</a>, <a class="faq-link" href="http://www.nottingham.ac.uk/">University
+                        of Nottingham.</a></p>
+
+                    <p>This service is currently aimed at authors funded by Research Councils UK and the Wellcome Trust,
+                        to provide clear guidance on compliance with their Open Access (OA) policies and advice on the
+                        options available. It could be extended to cover other research funders.</p>
+
+                    <h3 class="secondary-heading"> Contacts & Feedback</h3>
+
+                    <p>If you wish to contact the FACT team, we strongly recommend that you use our <a class="faq-link"
+                                                                                                       href="#">feedback
+                        tool.</a></p>
+
+                    <p>Alternatively, you can email FACT at: <a class="faq-link" href="mailto:fact@sherpa.ac.uk">
+                        fact@sherpa.ac.uk.</a></p>
+
+                    <p>Individual Team members and our postal address are detailed on the <a class="faq-link"
+                                                                                             href="http://crc.nottingham.ac.uk/contacts.php">CRC
+                        Contacts Page</a>.</p>
+
+                    <h3 class="secondary-heading"> Our Sponsors</h3>
+
+                    <p><a class="faq-link" href="http://www.rcuk.ac.uk/">Research Councils UK</a> and the <a
+                            class="faq-link" href="http://www.wellcome.ac.uk/">Wellcome Trust</a> provided the seed
+                        funding to develop FACT. Jisc, RCUK and the Wellcome Trust now jointly fund the continued
+                        maintenance of FACT.</p>
+                    <a href="http://www.jisc.ac.uk/"><img class="sponsor-logo-color" src="{{url_for('static', filename='img/jisc-std.png')}}"></a>
+                    <a href="http://www.rcuk.ac.uk/"><img class="sponsor-logo-color" src="{{url_for('static', filename='img/RCUK-horizontal-std.png')}}"></a>
+                    <a href="http://www.wellcome.ac.uk/"><img class="sponsor-logo-color smaller"
+                                                              src="{{url_for('static', filename='img/wellcome-trust-std.png')}}"></a>
+
+                    <h3 class="secondary-heading">Supported Funders</h3>
+
+                    <p>FACT references the open access policies of the following research funders:</p>
+
+                    <a href="http://www.arthritisresearchuk.org/"><img class="sponsor-logo-color"
+                                                                       src="{{url_for('static', filename='img/aruk-std.png')}}"></a>
+                    <a href="http://www.ahrc.ac.uk/Pages/Home.aspx"><img class="sponsor-logo-color"
+                                                                         src="{{url_for('static', filename='img/ahrc-horizontal-std.png')}}"></a>
+                    <a href="http://www.bbsrc.ac.uk/home/home.aspx"><img class="sponsor-logo-color "
+                                                                         src="{{url_for('static', filename='img/bbsrc-std.png')}}"></a>
+                    <a href="http://www.breastcancercampaign.org/"><img class="sponsor-logo-color  bigger"
+                                                                        src="{{url_for('static', filename='img/bcc-std.png')}}"></a>
+                    <a href="http://www.bhf.org.uk/"><img class="sponsor-logo-color bhf" src="{{url_for('static', filename='img/bhf-std.png')}}"></a>
+                    <a href="http://www.cancerresearchuk.org/"><img class="sponsor-logo-color bigger "
+                                                                    src="{{url_for('static', filename='img/cruk-std.png')}}"></a>
+                    <a href="http://www.esrc.ac.uk/"><img class="sponsor-logo-color biggest" src="{{url_for('static', filename='img/esrc-std.png')}}"></a>
+                    <a href="http://www.epsrc.ac.uk/"><img class="sponsor-logo-color" src="{{url_for('static', filename='img/epsrc-std.png')}}"></a>
+                    <a href="http://leukaemialymphomaresearch.org.uk/"><img class="sponsor-logo-color biggest"
+                                                                            src="{{url_for('static', filename='img/imgres.jpg')}}"></a>
+                    <a href="http://www.mrc.ac.uk/"><img class="sponsor-logo-color bigger" src="{{url_for('static', filename='img/mrc-std.png')}}"></a>
+                    <a href="http://www.nerc.ac.uk/"><img class="sponsor-logo-color smaller" src="{{url_for('static', filename='img/nerc-std.png')}}"></a>
+                    <a href="http://www.stfc.ac.uk/home.aspx"><img class="sponsor-logo-color "
+                                                                   src="{{url_for('static', filename='img/stfc-std.png')}}"></a>
+                    <a href="http://www.wellcome.ac.uk/"><img class="sponsor-logo-color smaller"
+                                                              src="{{url_for('static', filename='img/wellcome-trust-std.png')}}"></a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

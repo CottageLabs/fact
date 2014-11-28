@@ -1,0 +1,214 @@
+li.faq-preview a{
+	font-family: Proxima, sans-serif;
+/*  -- typekit css--
+	font-family: proxima-nova-alt, sans-serif;
+	font-style: normal;
+	font-weight: 600 */	
+	color: #414141;
+}
+li.faq-preview{
+	list-style: decimal;
+}
+ul.faq-preview {
+	-webkit-padding-start:20px;
+}
+ul.faq {
+	margin-top: 45px;
+	-webkit-padding-start:20px;
+}
+li.question {
+	list-style: decimal;
+	font-family: Proxima, sans-serif;
+/*  -- typekit css--
+	font-family: proxima-nova-alt, sans-serif;
+	font-style: normal;
+	font-weight: 600 */	
+	color: #414141;
+	font-size: 18px;
+}
+.answer {
+	font-family: ProximaLight, sans-serif;
+/*  -- typekit css--
+	font-family: proxima-nova-alt, sans-serif;
+	font-style: normal;
+	font-weight: 100 */	
+	color: #414141;
+	font-size: 14px;
+}
+a.faq-link {
+	color: #87aa3a;
+	text-decoration: none;
+}
+ul.answer {
+	list-style: disc;
+	margin-bottom: 15px;
+}
+li.definitions {
+	list-style: disc;
+	font-family: ProximaLight, sans-serif;
+	/*  -- typekit css--
+	font-family: proxima-nova-alt, sans-serif;
+	font-style: normal;
+	font-weight: 100 */	
+	color: #414141;
+	font-size: 15px;
+}
+
+li.definitions-bold {
+	list-style: disc;
+	font-family: sans-serif;
+	/*  -- typekit css--
+	font-family: proxima-nova-alt, sans-serif;
+	font-style: normal;
+	font-weight: 600 */	
+	color: #414141;
+	font-size: 15px;
+}
+p.source {
+	padding-left: 25px;
+	margin-bottom: 0;
+	padding-top: 10px;
+}
+ul.definitions {
+	padding-bottom: 10px;
+}
+.box-wrapper {
+	padding-left: 15px;
+	padding-right: 15px;
+}
+h3.secondary-heading {
+	font-family: Proxima, sans-serif;
+/*  -- typekit css--
+	font-family: proxima-nova-alt, sans-serif;
+	font-style: normal;
+	font-weight: 600 */	
+	color: #414141;
+	font-size: 18px;
+}
+.sponsor-logo-color {
+    width: auto;
+    height: 35px;
+    margin: 15px;
+}
+.sponsor-logo-color.smaller {
+    width: auto;
+    height: 25px;
+}
+.sponsor-logo-color.bigger {
+    width: auto;
+    height: 45px;
+}
+.sponsor-logo-color.biggest {
+    width: auto;
+    height: 55px;
+}
+.sponsor-logo-color.bhf {
+    width: auto;
+    height: 60px;
+}
+p.warning{
+	color: #9b3042;
+	font-family: Proxima, sans-serif;
+/*  -- typekit css--
+	font-family: proxima-nova-alt, sans-serif;
+	font-style: normal;
+	font-weight: 600 */
+}
+.para-style{
+	padding-top: 15px;
+}
+.query {
+	font-family: Monaco, courier;
+}
+.query-description p{
+	font-family: ProximaLight, sans-serif;
+/*  -- typekit css--
+	font-family: proxima-nova-alt, sans-serif;
+	font-style: normal;
+	font-weight: 100 */
+}
+p.red {
+	color: #9b3042;
+}
+.btn.btn-small {
+	display: inline-block;
+	border-radius: 1px;
+    border: 1px solid #779f41;
+    font-size: 12px;
+    color: #fff;  
+    background: #8fb253; /* Old browsers */
+    background: -moz-linear-gradient(top,  #8fb253 0%, #779f41 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#8fb253), color-stop(100%,#779f41)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #8fb253 0%,#779f41 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #8fb253 0%,#779f41 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #8fb253 0%,#779f41 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #8fb253 0%,#779f41 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8fb253', endColorstr='#779f41',GradientType=0 ); /* IE6-9 */
+    -moz-box-shadow: 0px 2px 0px #495833;
+    -webkit-box-shadow: 0px 2px 0px #495833;
+    box-shadow: 0px 2px 0px #495833;
+    text-shadow: 1px 1px #777876;
+    padding: 3px;
+    text-decoration: none;
+    margin-left: 5px;
+}
+.btn.btn-small:hover {
+	background: #779f41; /* Old browsers */
+    background: -moz-linear-gradient(top,  #779f41 0%, #5c8436 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#779f41), color-stop(100%,#5c8436)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #779f41 0%,#5c8436 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,  #779f41 0%,#5c8436 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top,  #779f41 0%,#5c8436 100%); /* IE10+ */
+    background: linear-gradient(to bottom,  #779f41 0%,#5c8436 100%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#779f41', endColorstr='#5c8436',GradientType=0 ); /* IE6-9 */
+    color: #fff;  
+    border: 1px solid #5c8436;
+}
+strong {
+	font-family: Monaco, courier;
+	color: #414141;
+	font-size: 14px;
+}
+.row-margin-top {
+	margin-top: 25px;
+}
+pre.code-box{
+	border-radius: 1px;
+	font-family: Monaco, courier;
+
+}
+.monaco {
+	font-family: Monaco, courier;
+}
+samp.samp-style {
+	font-family: ProximaItalic, sans-serif;
+/*  -- typekit css--
+	font-family: proxima-nova-alt, sans-serif;
+	font-style: italic;
+	font-weight: 100 */	
+	color: #414141;
+	padding-left: 45px;
+	padding-right: 45px;
+}
+code.code-style{
+	color: #414141;
+	background-color: #e7ebdc;
+	padding: 5px;
+}
+.p-padding-top {
+	padding-top: 10px;
+}
+table.table-style {
+	font-family: ProximaLight, sans-serif;
+/*  -- typekit css--
+	font-family: proxima-nova-alt, sans-serif;
+	font-style: normal;
+	font-weight: 100 */	
+	color: #414141; 
+}
+.light-green {
+	color: #87aa3a;
+}
+.table > thead > tr > th, .table > tbody > tr > th, .table > tfoot > tr > th, .table > thead > tr > td, .table > tbody > tr > td, .table > tfoot > tr > td {
+	padding:0;
+}

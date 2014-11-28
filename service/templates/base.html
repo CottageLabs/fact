@@ -26,6 +26,7 @@
     <link href="{{url_for('static', filename='css/search.css')}}" rel="stylesheet">
     <link href="{{url_for('static', filename='css/search-results.css')}}" rel="stylesheet">
     <link href="{{url_for('static', filename='css/results.css')}}" rel="stylesheet">
+    <link href="{{url_for('static', filename='css/static.css')}}" rel="stylesheet">
 
     <!-- Custom Fonts -->
     <link href="{{url_for('static', filename='css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
@@ -65,17 +66,14 @@
                         <a class="nav-item" href="{{url_for('root')}}">Home</a>
                     </li>
                     <li>
-                        <a a class="nav-item" href="help.html">Help & Feedback</a>
+                        <a a class="nav-item" href="{{url_for('help')}}">Help & Feedback</a>
                     </li>
                     <li>
                         <a a class="nav-item dropdown-toggle" data-toggle="dropdown" href="#">More +</a>
                         <ul aria-labelledby="dropdownMenu1" class="dropdown-menu dropdown-style uppercase" role="menu">
-                            <li>
-                            <a href="api.html" class='dropdown-link' role='menuitem' tabindex='-1'> Api</a>
-                            </li> 
-                            <li>
-                            <a href="about.html" class='dropdown-link' role='menuitem' tabindex='-1'> About </a>
-                            </li> 
+                            <li><a href="{{url_for('about')}}" class='dropdown-link' role='menuitem' tabindex='-1'> About </a></li>
+                            <li><a href="{{url_for('faq')}}" class='dropdown-link' role='menuitem' tabindex='-1'> FAQ</a></li>
+                            <li><a href="{{url_for('api')}}" class='dropdown-link' role='menuitem' tabindex='-1'> API</a></li>
                           </ul>
                         </a>
                     </li>
