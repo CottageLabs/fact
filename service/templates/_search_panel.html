@@ -31,19 +31,19 @@
             </li>
         </ol>
 
-        <div class="clearfix">
-            <div id="not-found" class="message-wrapper" style="display:none">
+        <div class="row">
+            <div id="not-found" class="message-wrapper col-sm-8" style="display:none">
                 <p class="search-message"> No results found</p>
                 <a href="#" class="feedback-link"> Send us feedback</a>
             </div>
-            <div id="form-errors" class="message-wrapper" style="display:none">
+            <div id="form-errors" class="message-wrapper col-sm-8" style="display:none">
                 <p class="bold search-message"> We need more information to check compliance - please fill in both the boxes above</p>
             </div>
-            <div id="searching" class="message-wrapper" style="display:none">
+            <div id="searching" class="message-wrapper col-sm-8" style="display:none">
                 <p class="search-message"><img src="{{url_for('static', filename='images/loading.gif')}}"> determining if you can comply with your funder's policy</p>
             </div>
 
-            <div class="button-wrapper pull-right">
+            <div class="button-wrapper pull-right col-sm-4">
                 <a class="btn search-button pull-right" id="do-search">Search</a>
                 <button id="clear-select" type="reset" value="Clear" class=" btn clear-button pull-right">Clear</button>
             </div>
