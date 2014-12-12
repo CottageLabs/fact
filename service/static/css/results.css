@@ -105,3 +105,12 @@ a.zebra-link {
 	color: #414141;
 	text-decoration: underline;
 }
+@media (max-width: 450px){
+	.message-wrapper{
+		margin-bottom: 15px;
+	}
+}
+.button-wrapper,
+.message-wrapper {
+	display: inline-block;
+}

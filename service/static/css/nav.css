@@ -91,13 +91,11 @@
 .navbar-default .navbar-toggle:focus{
     background-color: #f8f8f2;
 }
-
 .navbar-nav>li>.dropdown-menu {
     -webkit-box-shadow: 3px 2px 0px(0,0,0,.175)!important; 
     box-shadow: 3px 2px 0px rgba(0,0,0,.175)!important;
     border: none!important;
 }
-
 .container-fluid > .navbar-collapse{
     padding-right: 15px;
     padding-left: 30px;

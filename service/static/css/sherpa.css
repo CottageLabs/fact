@@ -143,6 +143,20 @@ a.btn.search-button{
         padding-bottom: 5px;
     }
 }
+@media (max-width: 768px) {
+    .navbar-header.sherpa-header{
+        margin-right: 0;
+        margin-left: 0;
+    }
+}
+.info-box {
+    border:1px solid #dee3de;
+    margin-top: 60px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: #fff;
+}
 
 a.btn.clear-results-button:hover {
     color: #6f8371;
@@ -157,14 +171,4 @@ a.btn.search-button.show-all.pull-right {
     padding-top: 5px;
     margin-right: 15px;
     margin-top: 15px;
-}
-
-@media (max-width: 450px){
-	.message-wrapper{
-		margin-bottom: 15px;
-	}
-}
-.button-wrapper,
-.message-wrapper {
-	display: inline-block;
 }
