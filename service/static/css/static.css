@@ -112,6 +112,7 @@ p.warning{
 }
 .query {
 	font-family: Monaco, courier;
+    font-size: 12px;
 }
 .query-description p{
 	/* font-family: ProximaLight, sans-serif; */

@@ -14,7 +14,7 @@
                                 <li class="definitions">Link to local information on open access funds, guides, policies, and advisors</li>
                                 <li class="definitions">Reformat the FACT data, for example to highlight local policies and preferences.</li>
                             </ul>
-                            <p>The FACT API can also be used for statistical studies, such as checking the potential compliance of lists of journals or articles. E.g. see this Presentation to OR2013, slides 20 to 23.</p>
+                            <p>The FACT API can also be used for statistical studies, such as checking the potential compliance of lists of journals or articles. E.g. see this <a class="faq-link" href="http://www.sherpa.ac.uk/documents/FACT-OR2013-2013-07-09.pptx">Presentation to OR2013</a>, slides 20 to 23.</p>
 
                             <h3 class="secondary-heading"> Current prototype</h3>
                             <p class="warning">This API is a beta test version, and should not be used for business-critical applications.</p>
@@ -22,79 +22,79 @@
 
                             <p>The base URL is:</p>
                             <a class="faq-link" href="http://www.sherpa.ac.uk/fact/api-beta">www.sherpa.ac.uk/fact/api-beta</a>
-                            <p class="para-style">We would very much appreciate <a class="faq-link" href="#">feedback </a>on any aspect fo this prototype, for instance; how far it goes towards meeting your requirements, the suitability of the output, etc.</p>
+                            <p class="para-style">We would very much appreciate <a class="faq-link" href="mailto:fact@sherpa.ac.uk?Subject=Feedback%20from%20FACT%20user">feedback </a>on any aspect fo this prototype, for instance; how far it goes towards meeting your requirements, the suitability of the output, etc.</p>
                             <h3 class="secondary-heading"> Parameters</h3>
                             <p>Parameter names are case sensitive, but their values are case insensitive. Where they contain spaces or other special characters, they should be URL-encoded.</p>
 
                             <p>Parameters may be used in combination, although logically incompatible combinations may yield zero results.</p>
                             <h3 class="secondary-heading"> Query Parameters</h3>
                             <div class="row row-margin-top">
-                                <div class="col-sm-3 query" >• &ak=</div>
-                                <div class=" col-sm-9 query-description">
+                                <div class="col-sm-1 query" >&ak=</div>
+                                <div class=" col-sm-11 query-description">
                                     <p> Access Key - a unique string of letters and numbers for each user appication, obtainable from: <a class="faq-link" href="http://www.sherpa.ac.uk/romeo/apiregistry"> www.sherpa.ac.uk/romeo/apiregistry</a>- Required.</p>
-                                    <p>e.g. <a class="faq-link" href="http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&issn=2230-326X&juliet_id=705">http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&issn=2230-326X&juliet_id=705</a></p>
+                                    <p>e.g. <a class="faq-link api-example" href="http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&issn=2230-326X&juliet_id=705">http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&issn=2230-326X&juliet_id=705</a></p>
                                     <p class="red">The Access Key used in the examples on this page is a dummy key. You must substitute your own Access Key in the URLs to see the results. </p>
-                                    <p class="red">If you already have a RoMEO API Access Key, enter it here: <input> and <a class="btn btn-small">Regenerate the examples</a></p>
+                                    <p class="red">If you already have a RoMEO API Access Key, enter it here: <input type="text" value="83jLFoo23n3" id="access_key_example" name="access_key_example"> and <a class="btn btn-small" id="regenerate_examples">Regenerate the examples</a></p>
                                 </div> 
                             </div>
                             <div class="row row-margin-top">
-                                <div class="col-sm-3 query" >• &juliet_id=</div>
-                                <div class=" col-sm-9 query-description">
+                                <div class="col-sm-1 query" >&juliet_id=</div>
+                                <div class=" col-sm-11 query-description">
                                     <p> Funder’s JULIET persistent identifier - comma separated list of numbers - Required.</p>
-                                    <p>e.g. <a class="faq-link" href="http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&issn=0025-7273&juliet_id=695">http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&issn=0025-7273&juliet_id=695</a></p>
+                                    <p>e.g. <a class="faq-link api-example" href="http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&issn=0025-7273&juliet_id=695">http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&issn=0025-7273&juliet_id=695</a></p>
                                     <p>See the list of supported funders below</p>
                                 </div> 
                             </div>   
                             <div class="row row-margin-top">
-                                <div class="col-sm-3 query" >• &journaltitle=</div>
-                                <div class=" col-sm-9 query-description">
+                                <div class="col-sm-1 query" >&journaltitle=</div>
+                                <div class=" col-sm-11 query-description">
                                     <p>Journal title string - full title or standard abbreviations - Required, if <strong>&issn=</strong> not specified.</p>
-                                    <p>e.g. <a class="faq-link" href=" http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=722&journaltitle=journal%20of%20medicinal%20chemistry"> http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=722&journaltitle=journal%20of%20medicinal%20chemistry</a></p>
+                                    <p>e.g. <a class="faq-link api-example" href=" http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=722&journaltitle=journal%20of%20medicinal%20chemistry"> http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=722&journaltitle=journal%20of%20medicinal%20chemistry</a></p>
                                 </div> 
                             </div>    
                             <div class="row row-margin-top">
-                                <div class="col-sm-3 query" >• &querytype=</div>
-                                <div class=" col-sm-9 query-description">
-                                    <p>Type of journal title search. One of <strong>exact</strong> [default], <strong>starts</strong>, or <strong>contains</strong>. Only used with the <strong>&journaltitle= parameter.</strong></p>
-                                    <p>e.g. <a class="faq-link" href=" http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=722&journaltitle=journal%20of%20medicinal%20chemistry"> http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=722&journaltitle=journal%20of%20medicinal%20chemistry</a></p>
+                                <div class="col-sm-1 query" >&querytype=</div>
+                                <div class=" col-sm-11 query-description">
+                                    <p>Type of journal title search. One of <strong>exact</strong> [default], <strong>starts</strong>, or <strong>contains</strong>. Only used with the <strong>&journaltitle=</strong> parameter.</p>
+                                    <p>e.g. <a class="faq-link api-example" href=" http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=722&journaltitle=journal%20of%20medicinal%20chemistry"> http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=722&journaltitle=journal%20of%20medicinal%20chemistry</a></p>
                                 </div> 
                             </div>    
                             <div class="row row-margin-top">
-                                <div class="col-sm-3 query" >• &issn=</div>
-                                <div class=" col-sm-9 query-description">
+                                <div class="col-sm-1 query" >&issn=</div>
+                                <div class=" col-sm-11 query-description">
                                     <p>ISSN (International Standard Serial Number) - e.g. <strong>1535-9778</strong> - Required, if <strong>&journaltitle=</strong> not specified.</p>
-                                    <p>e.g. <a class="faq-link" href="http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=709&issn=1535-9778"> http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=709&issn=1535-9778</a></p>
+                                    <p>e.g. <a class="faq-link api-example" href="http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=709&issn=1535-9778"> http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=709&issn=1535-9778</a></p>
                                 </div> 
                             </div>  
 
 
                             <h3 class="secondary-heading"> Output Parameters</h3>
                             <div class="row row-margin-top">
-                                <div class="col-sm-2 query" >• &markup=</div>
-                                <div class=" col-sm-10 query-description">
+                                <div class="col-sm-1 query" >&markup=</div>
+                                <div class=" col-sm-11 query-description">
                                     <p>Markup format for output. One of:</p>
 
                                     <div class="row row-margin-top">
-                                        <div class="col-sm-2 query">• xml</div>
-                                        <div class="col-sm-10 ">
+                                        <div class="col-sm-1 query">xml</div>
+                                        <div class="col-sm-11 ">
                                             <p>XML [default]</p>
-                                            <p>e.g. <a class="faq-link" href="http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=717&issn=0378-4266&markup=xml">http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=717&issn=0378-4266&markup=xml</a></p> 
+                                            <p>e.g. <a class="faq-link api-example" href="http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=717&issn=0378-4266&markup=xml">http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=717&issn=0378-4266&markup=xml</a></p>
                                         </div>
                                     </div>
 
                                     <div class="row row-margin-top">
-                                        <div class="col-sm-2 query">• json</div>
-                                        <div class="col-sm-10 ">
+                                        <div class="col-sm-1 query">json</div>
+                                        <div class="col-sm-11 ">
                                             <p> JSON </p>
-                                            <p>e.g. <a class="faq-link" href="http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=705&issn=2151-4585&markup=json">http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=705&issn=2151-4585&markup=json</a></p> 
+                                            <p>e.g. <a class="faq-link api-example" href="http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=705&issn=2151-4585&markup=json">http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=705&issn=2151-4585&markup=json</a></p>
                                         </div>
                                     </div>
 
                                     <div class="row row-margin-top">
-                                        <div class="col-sm-2 query">• php</div>
-                                        <div class="col-sm-10">
+                                        <div class="col-sm-1 query">php</div>
+                                        <div class="col-sm-11">
                                             <p>PHP array definition code for use in eval() commands.</p>
-                                            <p>e.g. <a class="faq-link" href=" http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=726&issn=1758-2083&markup=php"> http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=726&issn=1758-2083&markup=php</a></p> 
+                                            <p>e.g. <a class="faq-link api-example" href=" http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=726&issn=1758-2083&markup=php"> http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=726&issn=1758-2083&markup=php</a></p>
                                         </div>        
                                     </div>
 
@@ -102,24 +102,24 @@
                                         <div class="col-sm-12">
                                             <p>Future additional alternative mark-up formats will be considered</p>
                                         </div>
-                                    </div>    
-
-                                    <div class="row row-margin-top">
-                                        <div class="col-sm-3 query">• &trail=</div>
-                                        <div class="col-sm-9 ">
-                                            <p>show or hide the decision trail for this journal from the FACT algorithm - default hide.</p>
-                                            <p>e.g. <a class="faq-link" href=" http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=698&trail=show&issn=1350-7524"> http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=698&trail=show&issn=1350-7524</a></p> 
-                                        </div>        
                                     </div>
                                 </div>
                             </div>
+                            <div class="row row-margin-top">
+                                <div class="col-sm-1 query">&trail=</div>
+                                <div class="col-sm-11 ">
+                                    <p>show or hide the decision trail for this journal from the FACT algorithm - default hide.</p>
+                                    <p>e.g. <a class="faq-link api-example" href=" http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=698&trail=show&issn=1350-7524"> http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=698&trail=show&issn=1350-7524</a></p>
+                                </div>
+                            </div>
+
                             <div class="row row-margin-top">
                                 <div class="col-sm-12">
                                     <h3 class="secondary-heading"> Output </h3>
                                     <p>ARGUMENTS AND DATA</p>
                                     <p>In general, all computable information is returned as arguments and displayable information is returned as data. This is implemented for each of the <strong>&markup=</strong> options as in the following examples:</p>
                                     <p class="bold">XML</p>
-                                    <pre class="code-box">&ltgoldcompliance goldcompliancecode=”yes” goldcompliancereport=”paidoa”&gtYou can publish your article compliantly with open access&lt/goldcompliance&gt</pre>
+                                    <pre class="code-box">&ltgoldcompliance goldcompliancecode="yes" goldcompliancereport="paidoa"&gtYou can publish your article compliantly with open access&lt/goldcompliance&gt</pre>
                                     <p class="bold">JSON</p>
                                     <pre class="code-box">"arg_goldcompliancecode": "yes",
 "arg_goldcompliancereport": "paidoa",
@@ -157,8 +157,8 @@
                                             </samp>
                                             <p class="p-padding-top">becomes:</p>
                                             <code class="monaco code-style">
-                                            &ltgoldconfirm goldconfirmcode=”confirmgoldlicence” goldconfirmlinkurl=”http://creativecommons.org/licenses/” goldconfirmlinktext=”Creative Commons”&gtConfirm that it is published under a Creative Commons Attribution (CC-BY) or more open licence.&lt/goldconfirm&gt
-                                            </code class="monaco code-style">
+                                            &ltgoldconfirm goldconfirmcode="confirmgoldlicence" goldconfirmlinkurl="http://creativecommons.org/licenses/" goldconfirmlinktext="Creative Commons"&gtConfirm that it is published under a Creative Commons Attribution (CC-BY) or more open licence.&lt/goldconfirm&gt
+                                            </code>
                                             <p class="p-padding-top">The <strong>...linktext</strong> is the text marked as the link in the original data, while the <strong>...linkurl</strong> is the corresponding URL. <strong>...linktext</strong> and <strong>...linkurl</strong> can therefore be used in a string substitution function to recreated the original hyperlink.
                                             </p>
                                             <p>Multiple Links. Only one <strong>...linktext</strong> and one <strong>...linkurl</strong> are allowed. If there is more than one hyperlink, space-separated URLs are given in <strong>...linkurl</strong> and their corresponding link texts are given separated by ‘|’ characters in <strong>...linktext</strong>. e.g.
@@ -168,7 +168,7 @@
                                             </samp>
                                             <p class="p-padding-top">becomes:</p>
                                             <code class="monaco code-style">
-                                            &ltgreencompliance greencompliancecode=”no” greencompliancereport=”noncompliant” greencompliancelinkurl=”http://europepmc.org/ http://www.ncbi.nlm.nih.gov/pmc/” greencompliancelinktext=”Europe PMC|Pubmed Central”&gt:You cannot readily archive your article compliantly in Europe PMC/Pubmed Central&lt/greencompliance&gt
+                                            &ltgreencompliance greencompliancecode="no" greencompliancereport="noncompliant" greencompliancelinkurl="http://europepmc.org/ http://www.ncbi.nlm.nih.gov/pmc/" greencompliancelinktext="Europe PMC|Pubmed Central"&gt:You cannot readily archive your article compliantly in Europe PMC/Pubmed Central&lt/greencompliance&gt
                                             </code>
                                         </div>
                                     </div>
@@ -180,7 +180,7 @@
                                                     <thead>
                                                         <tr>
                                                             <th class="bold">Funder</th>
-                                                            <th class="bold">JULIET_ID</th>
+                                                            <th class="bold">JULIET ID</th>
                                                         </tr>
                                                     </thead>
                                                     <tbody>
@@ -548,27 +548,27 @@
                         <div class="row">
                             <div class="col-sm-12">
                                 <h3 class="secondary-heading"> Sample XML Output </h3>
-                                <pre class="code-box">&lt?xml version=”1.0” encoding=”utf-8” ?&gt
-&ltfactapi version=”1.3”>
+                                <pre class="code-box">&lt?xml version="1.0" encoding="utf-8" ?&gt
+&ltfactapi version="1.3">
     &ltcontrol>
         &ltparameterlist>
-            &ltparameter source=”specified”>
+            &ltparameter source="specified">
                 &ltparametername>juliet_id&lt/parametername>
                 &ltparametervalue>722&lt/parametervalue>
             &lt/parameter>
-            &ltparameter source=”specified”>
+            &ltparameter source="specified">
                 &ltparametername>issn&lt/parametername>
                 &ltparametervalue>1099-8292&lt/parametervalue>
             &lt/parameter>
-            &ltparameter source=”default”>
+            &ltparameter source="default">
                 &ltparametername>lang&lt/parametername>
                 &ltparametervalue>en&lt/parametervalue>
             &lt/parameter>
-            &ltparameter source=”default”>
+            &ltparameter source="default">
                 &ltparametername>markup&lt/parametername>
                 &ltparametervalue>xml&lt/parametervalue>
             &lt/parameter>
-            &ltparameter source=”default”>
+            &ltparameter source="default">
                 &ltparametername>trail&lt/parametername>
                 &ltparametervalue>hide&lt/parametervalue>
             &lt/parameter>
@@ -583,25 +583,25 @@
         &ltdisclaimer>All SHERPA/FACT information is correct to the best of our knowledge but should not be relied upon for legal advice. SHERPA cannot be held responsible for the re-use of FACT data, or for alternative interpretations which are derived from this information.&lt/disclaimer>
         &lt/control>
         &ltfunderlist>
-            &ltfunder juliet_id=”722”>
+            &ltfunder juliet_id="722">
                 &ltname>Engineering and Physical Sciences Research Council&lt/name>
                 &ltacronym>EPSRC&lt/acronym>
                 &lturl>http://www.epsrc.ac.uk/&lt/url>
             &lt/funder>
         &lt/funderlist>
         &ltjournallist>
-            &ltjournal issn=”1099-8292”>
+            &ltjournal issn="1099-8292">
                 &lttitle>Internet Journal of Chemistry&lt/title>
-                &ltpublisher romeo_id=”43”>Internet Journal of Chemistry&lt/publisher>
+                &ltpublisher romeo_id="43">Internet Journal of Chemistry&lt/publisher>
             &lt/journal>
         &lt/journallist>
         &ltoverall>
-            &ltoverallcompliance overallcompliancecode=”yes” overallcompliancereport=”usegreen”>You can comply with your funder’s policy:&lt/overallcompliance>
-            &ltoverallrecommendation overallrecommendationcode=”usegreen”>You should self-archive your article within 6 months of publication.&lt/overallrecommendation>
+            &ltoverallcompliance overallcompliancecode="yes" overallcompliancereport="usegreen">You can comply with your funder’s policy:&lt/overallcompliance>
+            &ltoverallrecommendation overallrecommendationcode="usegreen">You should self-archive your article within 6 months of publication.&lt/overallrecommendation>
             &ltoveralladvicelist />
         &lt/overall>
         &ltgold>
-            &ltgoldcompliance goldcompliancecode=”no” goldcompliancereport=”unavailable”>You cannot publish your article with open access&lt/goldcompliance>
+            &ltgoldcompliance goldcompliancecode="no" goldcompliancereport="unavailable">You cannot publish your article with open access&lt/goldcompliance>
             &ltgoldreason>This is not an open access journal, nor does it have a paid open access option.&lt/goldreason>
             &ltgoldfee />
             &ltgoldadvicelist />
@@ -610,11 +610,11 @@
             &ltgolddecisionlist />
         &lt/gold>
         &ltgreen>
-            &ltgreencompliance greencompliancecode=”yes” greencompliancereport=”compliantaccepted”>You can archive your article compliantly in an open access repository&lt/greencompliance>
+            &ltgreencompliance greencompliancecode="yes" greencompliancereport="compliantaccepted">You can archive your article compliantly in an open access repository&lt/greencompliance>
             &ltgreenreason>You may deposit the Accepted version of your article in open access repositories upon publication.&lt/greenreason>
             &ltgreenadvicelist>
-                &ltgreenadvice greenadvicecode=”archive”>Please ensure that your article is deposited in an open access repository within 6 months of publication.&lt/greenadvice>
-                &ltgreenadvice greenadvicecode=”opendoar” greenadvicelinkurl=”http://www.opendoar.org/find.php” greenadvicelinktext=”OpenDOAR”>If necessary, use OpenDOAR to find your institution’s repository.&lt/greenadvice>
+                &ltgreenadvice greenadvicecode="archive">Please ensure that your article is deposited in an open access repository within 6 months of publication.&lt/greenadvice>
+                &ltgreenadvice greenadvicecode="opendoar" greenadvicelinkurl="http://www.opendoar.org/find.php" greenadvicelinktext="OpenDOAR">If necessary, use OpenDOAR to find your institution’s repository.&lt/greenadvice>
             &lt/greenadvicelist>
         &ltgreenconfirmlist />
         &ltgreendecisionlist />
@@ -746,4 +746,34 @@
             </div> 
 
                                 
+{% endblock %}
+
+{% block extra_js_bottom %}
+<script type="text/javascript">
+$(document).ready(function() {
+
+    var page = {
+        new_api_key : "83jLFoo23n3",
+        old_api_key: "83jLFoo23n3",
+        set_api_key : function(key) {
+            this.old_api_key = this.new_api_key;
+            this.new_api_key = key;
+            var that = this;
+            $(".api-example").each(function() {
+                var href = $(this).attr("href");
+                href = href.replace("ak=" + that.old_api_key, "ak=" + that.new_api_key);
+                $(this).attr("href", href);
+                $(this).html(href);
+            });
+        }
+    };
+
+    $("#regenerate_examples").click(function(event) {
+        event.preventDefault();
+        var key = $("#access_key_example").val();
+        page.set_api_key(key);
+    });
+
+})
+</script>
 {% endblock %}
