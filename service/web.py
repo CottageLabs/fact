@@ -33,10 +33,6 @@ app.register_blueprint(fact, url_prefix="/fact")
 #from octopus.modules.examples.examples import blueprint as examples
 #app.register_blueprint(examples, url_prefix="/examples")
 
-@app.route("/help")
-def help():
-    return render_template("help.html")
-
 @app.route("/faq")
 def faq():
     return render_template("faq.html")
