@@ -149,8 +149,8 @@ html[dir="rtl"] .select2-container .select2-choice > .select2-chosen {
     top: 100%;
 
     background: #fff;
-    /*color: #414141;*/
-    color: #6e8270;
+    color: #414141;
+    /* color: #6e8270; */
     border: 1px solid #aaa;
     border-top: 0;
 
