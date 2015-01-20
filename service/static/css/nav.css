@@ -13,10 +13,7 @@
     display: inline-block;
     padding-left: 15px;
     color: #515151;
-    /*font-family: ProximaLight;*/
-    font-family: proxima-nova-alt, sans-serif;
-    font-weight: 100;
-    font-style: normal;
+    font-family: ProximaLight;
     font-size: 18px;
     line-height: 0;
 }
@@ -58,8 +55,9 @@
 .dropdown-menu>li>a {
     color: #6e8270;
     text-align: center;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 3px;
+    padding-bottom: 4px;
+    border-top: 1px solid #6e8270;
 }
 .dropdown-menu>li>a:hover{
     background-color: #6e8270;
@@ -93,7 +91,7 @@
 }
 .navbar-nav>li>.dropdown-menu {
     -webkit-box-shadow: 3px 2px 0px(0,0,0,.175)!important; 
-    box-shadow: 3px 2px 0px rgba(0,0,0,.175)!important;
+    box-shadow:  -3px 3px 2px rgba(0,0,0,.175)!important;
     border: none!important;
 }
 .container-fluid > .navbar-collapse{

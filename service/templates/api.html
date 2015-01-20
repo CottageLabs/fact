@@ -29,8 +29,8 @@
                             <p>Parameters may be used in combination, although logically incompatible combinations may yield zero results.</p>
                             <h3 class="secondary-heading"> Query Parameters</h3>
                             <div class="row row-margin-top">
-                                <div class="col-sm-1 query" >&ak=</div>
-                                <div class=" col-sm-11 query-description">
+                                <div class="col-sm-2 query" >&ak=</div>
+                                <div class=" col-sm-10 query-description">
                                     <p> Access Key - a unique string of letters and numbers for each user appication, obtainable from: <a class="faq-link" href="http://www.sherpa.ac.uk/romeo/apiregistry"> www.sherpa.ac.uk/romeo/apiregistry</a>- Required.</p>
                                     <p>e.g. <a class="faq-link api-example" href="http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&issn=2230-326X&juliet_id=705">http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&issn=2230-326X&juliet_id=705</a></p>
                                     <p class="red">The Access Key used in the examples on this page is a dummy key. You must substitute your own Access Key in the URLs to see the results. </p>
@@ -38,30 +38,30 @@
                                 </div> 
                             </div>
                             <div class="row row-margin-top">
-                                <div class="col-sm-1 query" >&juliet_id=</div>
-                                <div class=" col-sm-11 query-description">
+                                <div class="col-sm-2 query" >&juliet_id=</div>
+                                <div class=" col-sm-10 query-description">
                                     <p> Funder’s JULIET persistent identifier - comma separated list of numbers - Required.</p>
                                     <p>e.g. <a class="faq-link api-example" href="http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&issn=0025-7273&juliet_id=695">http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&issn=0025-7273&juliet_id=695</a></p>
                                     <p>See the list of supported funders below</p>
                                 </div> 
                             </div>   
                             <div class="row row-margin-top">
-                                <div class="col-sm-1 query" >&journaltitle=</div>
-                                <div class=" col-sm-11 query-description">
+                                <div class="col-sm-2 query" >&journaltitle=</div>
+                                <div class=" col-sm-10 query-description">
                                     <p>Journal title string - full title or standard abbreviations - Required, if <strong>&issn=</strong> not specified.</p>
                                     <p>e.g. <a class="faq-link api-example" href=" http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=722&journaltitle=journal%20of%20medicinal%20chemistry"> http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=722&journaltitle=journal%20of%20medicinal%20chemistry</a></p>
                                 </div> 
                             </div>    
                             <div class="row row-margin-top">
-                                <div class="col-sm-1 query" >&querytype=</div>
-                                <div class=" col-sm-11 query-description">
+                                <div class="col-sm-2 query" >&querytype=</div>
+                                <div class=" col-sm-10 query-description">
                                     <p>Type of journal title search. One of <strong>exact</strong> [default], <strong>starts</strong>, or <strong>contains</strong>. Only used with the <strong>&journaltitle=</strong> parameter.</p>
                                     <p>e.g. <a class="faq-link api-example" href=" http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=722&journaltitle=journal%20of%20medicinal%20chemistry"> http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=722&journaltitle=journal%20of%20medicinal%20chemistry</a></p>
                                 </div> 
                             </div>    
                             <div class="row row-margin-top">
-                                <div class="col-sm-1 query" >&issn=</div>
-                                <div class=" col-sm-11 query-description">
+                                <div class="col-sm-2 query" >&issn=</div>
+                                <div class=" col-sm-10 query-description">
                                     <p>ISSN (International Standard Serial Number) - e.g. <strong>1535-9778</strong> - Required, if <strong>&journaltitle=</strong> not specified.</p>
                                     <p>e.g. <a class="faq-link api-example" href="http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=709&issn=1535-9778"> http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=709&issn=1535-9778</a></p>
                                 </div> 
@@ -70,29 +70,29 @@
 
                             <h3 class="secondary-heading"> Output Parameters</h3>
                             <div class="row row-margin-top">
-                                <div class="col-sm-1 query" >&markup=</div>
-                                <div class=" col-sm-11 query-description">
+                                <div class="col-sm-2 query" >&markup=</div>
+                                <div class=" col-sm-10 query-description">
                                     <p>Markup format for output. One of:</p>
 
                                     <div class="row row-margin-top">
                                         <div class="col-sm-1 query">xml</div>
-                                        <div class="col-sm-11 ">
+                                        <div class="col-sm-10 ">
                                             <p>XML [default]</p>
                                             <p>e.g. <a class="faq-link api-example" href="http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=717&issn=0378-4266&markup=xml">http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=717&issn=0378-4266&markup=xml</a></p>
                                         </div>
                                     </div>
 
                                     <div class="row row-margin-top">
-                                        <div class="col-sm-1 query">json</div>
-                                        <div class="col-sm-11 ">
+                                        <div class="col-sm-2 query">json</div>
+                                        <div class="col-sm-10 ">
                                             <p> JSON </p>
                                             <p>e.g. <a class="faq-link api-example" href="http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=705&issn=2151-4585&markup=json">http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=705&issn=2151-4585&markup=json</a></p>
                                         </div>
                                     </div>
 
                                     <div class="row row-margin-top">
-                                        <div class="col-sm-1 query">php</div>
-                                        <div class="col-sm-11">
+                                        <div class="col-sm-2 query">php</div>
+                                        <div class="col-sm-10">
                                             <p>PHP array definition code for use in eval() commands.</p>
                                             <p>e.g. <a class="faq-link api-example" href=" http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=726&issn=1758-2083&markup=php"> http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=726&issn=1758-2083&markup=php</a></p>
                                         </div>        
@@ -106,8 +106,8 @@
                                 </div>
                             </div>
                             <div class="row row-margin-top">
-                                <div class="col-sm-1 query">&trail=</div>
-                                <div class="col-sm-11 ">
+                                <div class="col-sm-2 query">&trail=</div>
+                                <div class="col-sm-10 ">
                                     <p>show or hide the decision trail for this journal from the FACT algorithm - default hide.</p>
                                     <p>e.g. <a class="faq-link api-example" href=" http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=698&trail=show&issn=1350-7524"> http://www.sherpa.ac.uk/fact/api-beta?ak=83jLFoo23n3&juliet_id=698&trail=show&issn=1350-7524</a></p>
                                 </div>

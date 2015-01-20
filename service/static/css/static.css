@@ -1,12 +1,10 @@
 li.faq-preview a{
-	/*font-family: Proxima, sans-serif;*/
-	font-family: proxima-nova-alt, sans-serif;
-	font-style: normal;
-	font-weight: 600;
+	font-family: ProximaSemibold, sans-serif;
 	color: #414141;
 }
 li.faq-preview{
 	list-style: decimal;
+	font-family: ProximaSemibold;
 }
 ul.faq-preview {
 	-webkit-padding-start:20px;
@@ -17,20 +15,13 @@ ul.faq {
 }
 li.question {
 	list-style: decimal;
-	/*font-family: Proxima, sans-serif;*/
-	font-family: proxima-nova-alt, sans-serif;
-	font-style: normal;
-	font-weight: 600;
+	font-family: ProximaSemibold, sans-serif;
 	color: #414141;
 	font-size: 18px;
 }
 .answer {
-	/* font-family: ProximaLight, sans-serif; */
-	font-family: proxima-nova-alt, sans-serif;
-	font-style: normal;
-	font-weight: 100;
-	color: #414141;
-	font-size: 14px;
+	font-family: ProximaLight, sans-serif;
+	color: #000;
 }
 a.faq-link {
 	color: #87aa3a;
@@ -42,20 +33,14 @@ ul.answer {
 }
 li.definitions {
 	list-style: disc;
-	/*font-family: ProximaLight, sans-serif;*/
-	font-family: proxima-nova-alt, sans-serif;
-	font-style: normal;
-	font-weight: 100;
-	color: #414141;
+	font-family: ProximaLight, sans-serif;
+	color: #000;
 	font-size: 15px;
 }
 
 li.definitions-bold {
 	list-style: disc;
-	/*font-family: sans-serif;*/
-	font-family: proxima-nova-alt, sans-serif;
-	font-style: normal;
-	font-weight: 600;
+	font-family: ProximaSemibold;
 	color: #414141;
 	font-size: 15px;
 }
@@ -72,10 +57,7 @@ ul.definitions {
 	padding-right: 15px;
 }
 h3.secondary-heading {
-	/*font-family: Proxima, sans-serif;*/
-	font-family: proxima-nova-alt, sans-serif;
-	font-style: normal;
-	font-weight: 600;
+	font-family: Proxima, sans-serif;
 	color: #414141;
 	font-size: 18px;
 }
@@ -102,10 +84,7 @@ h3.secondary-heading {
 }
 p.warning{
 	color: #9b3042;
-	/* font-family: Proxima, sans-serif; */
-	font-family: proxima-nova-alt, sans-serif;
-	font-style: normal;
-	font-weight: 600;
+	font-family: ProximaSemibold, sans-serif;
 }
 .para-style{
 	padding-top: 15px;
@@ -115,10 +94,7 @@ p.warning{
     font-size: 12px;
 }
 .query-description p{
-	/* font-family: ProximaLight, sans-serif; */
-	font-family: proxima-nova-alt, sans-serif;
-	font-style: normal;
-	font-weight: 100;
+	font-family: ProximaLight, sans-serif; 
 }
 p.red {
 	color: #9b3042;
@@ -174,10 +150,7 @@ pre.code-box{
 	font-family: Monaco, courier;
 }
 samp.samp-style {
-	/* font-family: ProximaItalic, sans-serif; */
-	font-family: proxima-nova-alt, sans-serif;
-	font-style: italic;
-	font-weight: 100;
+	font-family: ProximaItalic, sans-serif; 
 	color: #414141;
 	padding-left: 45px;
 	padding-right: 45px;
@@ -191,10 +164,7 @@ code.code-style{
 	padding-top: 10px;
 }
 table.table-style {
-	/* font-family: ProximaLight, sans-serif; */
-	font-family: proxima-nova-alt, sans-serif;
-	font-style: normal;
-	font-weight: 100;
+	font-family: ProximaLight, sans-serif;
 	color: #414141; 
 }
 .light-green {
