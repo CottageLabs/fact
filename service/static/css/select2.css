@@ -57,7 +57,7 @@ Version: 3.5.1 Timestamp: Tue Jul 22 18:58:56 EDT 2014
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#ffffff', endColorstr = '#eeeeee', GradientType = 0);
     background-image: linear-gradient(to top, #eee 0%, #fff 50%);*/
 
-    font-style: italic;
+    /*font-style: italic;*/
 }
 
 html[dir="rtl"] .select2-container .select2-choice {
@@ -391,7 +391,6 @@ html[dir="rtl"] .select2-results {
     margin: 0;
     cursor: pointer;
     /*color: #414141;*/
-    color: #6e8270;
 
     min-height: 1em;
 
@@ -548,11 +547,7 @@ html[dir="rtl"] .select2-container-multi .select2-choices li
     margin: 1px 0;
 
     font-size: 100%;
-    /*font-family: ProximaItalic;*/
-    font-family: proxima-nova-alt, sans-serif;
-    font-weight: 100;
-    font-style: italic;
-
+    font-family: ProximaItalic;
     color: #666;
     outline: 0;
     border: 0;
@@ -705,21 +700,17 @@ html[dir="rtl"] .select2-container-multi .select2-search-choice-close {
 }
 
 .select2-default span#select2-chosen-2 {
-    font-family: proxima-nova-alt;
-    font-weight: 100;
-    font-style: italic;
+    font-family: ProximaItalic;
+    font-style: normal;
 }
 
 .select2-allowclear span#select2-chosen-2 {
-    font-family: proxima-nova-alt;
-    font-weight: 600;
-    font-style: normal;
+    font-family: ProximaSemibold;
 }
 
 .select2-search-choice div {
-    font-family: proxima-nova-alt;
-    font-weight: 600;
-    font-style: normal;
+    font-family: ProximaSemibold;
+    color: #6e8270;
 }
 
 

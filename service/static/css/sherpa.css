@@ -1,14 +1,14 @@
-/*
+
 @font-face {
-  font-family: Proxima; src: url('../fonts/Proxima_Nova.otf');
+  font-family: ProximaSemibold; src: url('../fonts/Mark_Simonson-Proxima_Nova_Semibold.otf');
 }
 @font-face { 
-  font-family: ProximaLight; src: url('../fonts/Proxima_Nova_Light.otf');
+  font-family: ProximaLight; src: url('../fonts/Mark_Simonson-Proxima_Nova_Thin.otf');
 }
 @font-face { 
-  font-family: ProximaItalic; src: url('../fonts/Proxima_Nova_Italic.otf');
+  font-family: ProximaItalic; src: url('../fonts/Mark_Simonson-Proxima_Nova_Thin_Italic.otf');
 }
-*/
+
 h2.form-heading {
     color: #6e8270;
     font-size: 20px;
@@ -17,10 +17,7 @@ h5{
     font-size: 22px;
 }
 p {
-    /*font-family: ProximaLight;*/
-    font-family: proxima-nova-alt, sans-serif;
-    font-weight: 100;
-    font-style: normal;
+    font-family: ProximaLight!important;
 }
 .row.gradient {
     background: #f8f8f2; /* Old browsers */
@@ -42,10 +39,17 @@ p {
     padding-right: 15px;
     background-color: #fff;
 }
-@media(max-width: 768px) {
+@media(max-width: 767px) {
     .search-box {
     margin-left: 15px;
     margin-right: 15px;
+    margin-top: 40px;
+    }
+}
+@media(min-width: 768px) and (max-width: 1023px) {
+    .search-box {
+    margin-left: 6%;
+    margin-right: 6%;
     margin-top: 40px;
     }
 }
@@ -57,23 +61,14 @@ ol{
 }
 h3{
     font-size: 21px;
-    /*font-family: ProximaLight;*/
-    font-family: proxima-nova-alt, sans-serif;
-    font-weight: 100;
-    font-style: normal;
+    font-family: ProximaLight;
 }
 h4 {
-    /*font-family: ProximaLight;*/
-    font-family: proxima-nova-alt, sans-serif;
-    font-weight: 100;
-    font-style: normal;
+    font-family: ProximaLight;
     font-size: 16px;
 }
 .bold {
-    /*font-family:Proxima;*/
-    font-family: proxima-nova-alt, sans-serif;
-    font-weight: 600;
-    font-style: normal;
+    font-family:ProximaSemibold;
 }
 
 /* buttons */

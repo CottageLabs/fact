@@ -45,10 +45,7 @@ a.go-top{
 	margin-top: 5px;
 	font-size: 18px;
     color: #414141;
-    /*font-family: Proxima;*/
-    font-family: proxima-nova-alt, sans-serif;
-    font-weight: 600;
-    font-style: normal;
+    font-family: ProximaSemibold;
 }
 @media (max-width: 320px){
 	.clear-results-button {
