@@ -12,6 +12,8 @@ ROMEO_API_KEY = ""
 ELASTIC_SEARCH_HOST = "http://localhost:9200"
 ELASTIC_SEARCH_INDEX = "fact"
 
+ELASTIC_SEARCH_VERSION = "1.4.2"
+
 ELASTIC_SEARCH_MAPPINGS = [
     "service.dao.JournalAutocompleteDAO"
 ]
